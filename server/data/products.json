@@ -1,0 +1,231 @@
+[
+  {
+    "id": "8dc90f27-76e7-4714-90cf-5e2c4b222745",
+    "name": "Fire Door",
+    "slug": "fire-door",
+    "category": "fire-protection-system",
+    "order": 1,
+    "specs": [
+      {
+        "label": "Rating",
+        "value": "90 min"
+      }
+    ],
+    "description": "Heavy-duty fire-rated door",
+    "isDeleted": false,
+    "createdAt": "2026-09-01T15:38:05.365Z",
+    "updatedAt": "2026-09-01T15:38:05.365Z"
+  },
+  {
+    "id": "691b1601-2656-461e-a70f-640c6444a87d",
+    "name": "Smoke Detector",
+    "slug": "smoke-detector",
+    "category": "fire-detection-alarm-system",
+    "order": 2,
+    "specs": [],
+    "description": "Addressable smoke detector",
+    "isDeleted": false,
+    "createdAt": "2026-09-01T15:38:05.381Z",
+    "updatedAt": "2026-09-01T15:38:05.381Z"
+  },
+  {
+    "id": "290553dd-eb9e-4e74-9cfe-14d93d4e4d68",
+    "name": "Updated Extinguisher",
+    "slug": "test-update",
+    "category": "fire-extinguisher",
+    "order": 10,
+    "specs": [],
+    "description": "Updated desc",
+    "isDeleted": true,
+    "createdAt": "2026-09-01T15:38:34.922Z",
+    "updatedAt": "2026-09-01T15:38:34.953Z"
+  },
+  {
+    "id": "03397721-76a5-4758-9149-84b54050771d",
+    "name": "Dup",
+    "slug": "test-update",
+    "category": "fire-extinguisher",
+    "order": 0,
+    "specs": [],
+    "isDeleted": false,
+    "createdAt": "2026-09-01T15:38:34.972Z",
+    "updatedAt": "2026-09-01T15:38:34.972Z"
+<<<<<<< HEAD
+=======
+  },
+  {
+    "id": "99c40595-236e-40ee-bdc6-7126de9de6d2",
+    "name": "CO2 Fire Extinguisher 5kg Pro",
+    "slug": "co2-fire-extinguisher-5kg",
+    "category": "fire-extinguisher",
+    "order": 5,
+    "graphicType": "ISO 7010",
+    "specs": [
+      {
+        "label": "Capacity",
+        "value": "5kg"
+      },
+      {
+        "label": "Fire Rating",
+        "value": "55B, E"
+      }
+    ],
+    "description": "CO2 gas fire extinguisher suitable for Class B and electrical fires",
+    "isDeleted": true,
+    "createdAt": "2026-09-02T16:10:14.436Z",
+    "updatedAt": "2026-09-02T16:10:24.919Z"
+  },
+  {
+    "id": "0ef39563-6209-4b52-afea-d009fc5fa63a",
+    "name": "test product 1",
+    "slug": "test-product-1",
+    "category": "ms-seamless-pipe",
+    "image": "https://images.unsplash.com/photo-1582139329536-e7284fece509?w=600&auto=format&fit=crop&q=80",
+    "order": 10,
+    "graphicType": "ISO 7010 Certified",
+    "specs": [
+      {
+        "label": "test",
+        "value": "4 to 6 Meters"
+      }
+    ],
+    "description": "Tsest",
+    "isDeleted": false,
+    "createdAt": "2026-09-03T07:22:27.602Z",
+    "updatedAt": "2026-09-03T07:22:27.602Z"
+  },
+  {
+    "id": "fa-01",
+    "name": "Addressable Fire Alarm Control Panel",
+    "slug": "addressable-fire-alarm-control-panel",
+    "category": "fire-detection-alarm-system",
+    "order": 1,
+    "specs": [
+      {
+        "label": "Brand",
+        "value": "Safemet"
+      },
+      {
+        "label": "Loops",
+        "value": "1-8 Loops"
+      }
+    ],
+    "description": "Intelligent addressable fire alarm control panel",
+    "image": "controlPanel"
+  },
+  {
+    "id": "fs-01",
+    "name": "CO2 Flooding System",
+    "slug": "co2-flooding-system",
+    "category": "fire-suppression-system",
+    "order": 1,
+    "specs": [
+      {
+        "label": "Agent",
+        "value": "CO2"
+      },
+      {
+        "label": "Pressure",
+        "value": "30-200 bar"
+      }
+    ],
+    "description": "CO2 gas fire suppression system for server rooms",
+    "image": "reliefValve"
+  },
+  {
+    "id": "fe-01",
+    "name": "ABC Dry Chemical Extinguisher",
+    "slug": "abc-dry-chemical",
+    "category": "fire-extinguisher",
+    "order": 1,
+    "specs": [
+      {
+        "label": "Capacity",
+        "value": "5kg"
+      },
+      {
+        "label": "Rating",
+        "value": "ABC 9A, 113B"
+      }
+    ],
+    "description": "Multi-purpose dry chemical fire extinguisher",
+    "image": "extinguisher3kg"
+  },
+  {
+    "id": "msp-01",
+    "name": "MS Seamless Pipe Schedule 40",
+    "slug": "ms-seamless-pipe-s40",
+    "category": "ms-seamless-pipe",
+    "order": 1,
+    "specs": [
+      {
+        "label": "Standard",
+        "value": "ASTM A106 Grade B"
+      },
+      {
+        "label": "Schedule",
+        "value": "SCH 40"
+      }
+    ],
+    "description": "Standard weight seamless carbon steel pipe",
+    "image": "butterflyValve"
+  },
+  {
+    "id": "fp-02",
+    "name": "Diesel Fire Pump",
+    "slug": "diesel-fire-pump",
+    "category": "fire-protection-system",
+    "order": 2,
+    "specs": [
+      {
+        "label": "Brand",
+        "value": "Safemet"
+      },
+      {
+        "label": "Capacity",
+        "value": "250 GPM"
+      }
+    ],
+    "description": "Diesel engine driven fire pump",
+    "image": "dieselPump"
+  },
+  {
+    "id": "fe-02",
+    "name": "CO2 5kg Extinguisher",
+    "slug": "co2-5kg",
+    "category": "fire-extinguisher",
+    "order": 2,
+    "specs": [
+      {
+        "label": "Capacity",
+        "value": "5kg"
+      },
+      {
+        "label": "Rating",
+        "value": "55B E"
+      }
+    ],
+    "description": "CO2 fire extinguisher for electrical fires",
+    "image": "extinguisherCo2"
+  },
+  {
+    "id": "fa-02",
+    "name": "Conventional Fire Alarm Panel",
+    "slug": "conventional-fire-alarm-panel",
+    "category": "fire-detection-alarm-system",
+    "order": 2,
+    "specs": [
+      {
+        "label": "Brand",
+        "value": "Safemet"
+      },
+      {
+        "label": "Zones",
+        "value": "4-32 Zones"
+      }
+    ],
+    "description": "Conventional addressable fire alarm panel",
+    "image": "controlPanel"
+>>>>>>> cdf4761 (First commit)
+  }
+]
