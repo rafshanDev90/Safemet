@@ -139,7 +139,8 @@ export class ProductController {
       res.status(400).json(response);
       return;
     }
-    const imageUrl = `${req.protocol}://${req.get('host')}/uploads/products/${file.filename}`;
+    const baseUrl = (process.env.APP_URL || `${req.protocol}://${req.get('host')}`).replace(/\/+$/, '');
+    const imageUrl = `${baseUrl}/uploads/products/${file.filename}`;
     const response: ApiResponse = {
       success: true,
       message: 'Image uploaded successfully',

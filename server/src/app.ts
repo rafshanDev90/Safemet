@@ -1,3 +1,6 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
@@ -12,12 +15,45 @@ import publicProductRoutes from './apps/public/routes/public-product.routes.js';
 
 dotenv.config();
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const app = express();
 const PORT = process.env.PORT || 4000;
 
-app.use(express.static('uploads'));
+const allowedOrigins = (process.env.CORS_ORIGIN || 'http://localhost:3000,http://localhost:3001,http://localhost:5173')
+  .split(',')
+  .map((origin) => origin.trim())
+  .filter(Boolean);
+
+const UPLOADS_DIR = path.resolve(process.env.UPLOADS_DIR || 'uploads');
+const CLIENT_DIST_DIR = path.resolve(process.env.CLIENT_DIST_DIR || path.resolve(__dirname, '../../client/dist'));
+const ADMIN_DIST_DIR = path.resolve(process.env.ADMIN_DIST_DIR || path.resolve(__dirname, '../../Safemete_Admin/dist'));
+const ADMIN_HOSTS = (process.env.ADMIN_HOSTS || '')
+  .split(',')
+  .map((host) => host.trim().toLowerCase())
+  .filter(Boolean);
+
+function isAdminHost(host: string): boolean {
+  const hostname = (host || '').toLowerCase().split(':')[0];
+  if (ADMIN_HOSTS.length > 0) return ADMIN_HOSTS.includes(hostname);
+  return hostname.startsWith('admin.');
+}
+
+function serveSpa(distDir: string) {
+  const indexHtml = path.join(distDir, 'index.html');
+  if (!fs.existsSync(indexHtml)) {
+    return (_req: express.Request, _res: express.Response, next: express.NextFunction) => next();
+  }
+  const staticHandler = express.static(distDir);
+  return (req: express.Request, res: express.Response, next: express.NextFunction) => {
+    if (req.method !== 'GET' && req.method !== 'HEAD') return next();
+    if (req.path.startsWith('/api') || req.path.startsWith('/uploads')) return next();
+    staticHandler(req, res, () => res.sendFile(indexHtml));
+  };
+}
+
+app.use(express.static(UPLOADS_DIR));
 app.use(cors({
-  origin: ['http://localhost:3000', 'http://localhost:3001', 'http://localhost:5173'],
+  origin: allowedOrigins,
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
@@ -40,6 +76,12 @@ app.use('/api/products', publicProductRoutes);
 // Admin endpoints
 app.use('/api/admin/users', userRoutes);
 app.use('/api/admin/products', productRoutes);
+
+// Static SPA serving (public site on main domain, admin panel on subdomain)
+app.use((req, res, next) => {
+  const distDir = isAdminHost(req.headers.host || '') ? ADMIN_DIST_DIR : CLIENT_DIST_DIR;
+  return serveSpa(distDir)(req, res, next);
+});
 
 app.use(notFoundHandler);
 app.use(errorHandler);

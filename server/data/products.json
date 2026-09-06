@@ -50,8 +50,6 @@
     "isDeleted": false,
     "createdAt": "2026-09-01T15:38:34.972Z",
     "updatedAt": "2026-09-01T15:38:34.972Z"
-<<<<<<< HEAD
-=======
   },
   {
     "id": "99c40595-236e-40ee-bdc6-7126de9de6d2",
@@ -226,6 +224,5 @@
     ],
     "description": "Conventional addressable fire alarm panel",
     "image": "controlPanel"
->>>>>>> cdf4761 (First commit)
   }
 ]
