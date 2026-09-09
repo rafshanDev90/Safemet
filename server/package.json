@@ -4,10 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "tsx watch src/app.ts",
-    "build": "tsc",
-    "start": "node dist/app.js",
-    "lint": "tsc --noEmit"
+    "dev": "node --watch src/app.js",
+    "start": "node src/app.js",
+    "seed": "node src/scripts/seed-admin.js"
   },
   "dependencies": {
     "bcrypt": "^6.0.0",
@@ -20,17 +19,5 @@
     "nodemailer": "^9.1.0",
     "uuid": "^11.1.0",
     "zod": "^3.24.4"
-  },
-  "devDependencies": {
-    "@types/bcrypt": "^6.0.0",
-    "@types/cors": "^2.8.17",
-    "@types/express": "^5.0.2",
-    "@types/jsonwebtoken": "^9.0.10",
-    "@types/multer": "^2.2.0",
-    "@types/node": "^22.14.0",
-    "@types/nodemailer": "^8.0.1",
-    "@types/uuid": "^10.0.0",
-    "tsx": "^4.21.0",
-    "typescript": "~5.8.2"
   }
 }
