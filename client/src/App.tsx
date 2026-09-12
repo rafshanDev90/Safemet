@@ -5,6 +5,7 @@ import { ProductsSection } from './components/ProductsSection';
 import { AdvantagesSection } from './components/AdvantagesSection';
 import { ProjectsSection } from './components/ProjectsSection';
 import { ServicesSection } from './components/ServicesSection';
+import { MissionVisionSection } from './components/MissionVisionSection';
 import { PartnersSection } from './components/PartnersSection';
 import { QuoteSection } from './components/QuoteSection';
 import { AboutSeoSection } from './components/AboutSeoSection';
@@ -19,7 +20,7 @@ import { CATEGORIES } from './productsData';
 type ViewMode = 'home' | 'about' | 'projects' | 'contact' | 'category' | 'product-detail';
 
 export default function App() {
-  const [currentView, setCurrentView] = useState<ViewMode>('category');
+  const [currentView, setCurrentView] = useState<ViewMode>('home');
   const [activeCategorySlug, setActiveCategorySlug] = useState<string>('fire-protection-system');
   const [activeProductSlug, setActiveProductSlug] = useState<string>('fire-door');
 
@@ -45,8 +46,9 @@ export default function App() {
     } else if (path === '/contact' || path === '/contact-us') {
       setCurrentView('contact');
     } else if (path === '/' || path === '/home') {
-      // Default to category view if opened with root or direct navigation
-      // but if user intentionally clicked home, stay home
+      setCurrentView('home');
+    } else {
+      setCurrentView('home');
     }
   };
 
@@ -206,6 +208,7 @@ export default function App() {
             <ProductsSection />
             <AdvantagesSection />
             <ProjectsSection />
+            <MissionVisionSection />
             <ServicesSection />
             <PartnersSection />
             <QuoteSection />

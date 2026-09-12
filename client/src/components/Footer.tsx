@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChevronUp } from 'lucide-react';
+import { ChevronUp, Phone, Mail, Globe, MapPin } from 'lucide-react';
 import { Container } from './Container';
 
 interface FooterProps {
@@ -73,35 +73,76 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             <div className="space-y-3 text-[11px] sm:text-xs">
               <div>
                 <span className="text-[10px] text-neutral-400 font-bold uppercase tracking-wider block">
-                  FREE CONSULTATION
+                  HOTLINE
                 </span>
-                <a
-                  href="tel:+08007777777"
-                  className="text-white font-bold hover:text-[#E5252B] transition-colors"
-                >
-                  +0800-7777777
-                </a>
+                <div className="flex items-center gap-2">
+                  <Phone className="w-3.5 h-3.5 text-[#E5252B] flex-shrink-0" />
+                  <a
+                    href="tel:+8801742264946"
+                    className="text-white font-bold hover:text-[#E5252B] transition-colors"
+                  >
+                    +8801742-264946
+                  </a>
+                </div>
               </div>
 
               <div>
                 <span className="text-[10px] text-neutral-400 font-bold uppercase tracking-wider block">
-                  ADDRESS
+                  LANDLINE
                 </span>
-                <span className="text-neutral-200">
-                  PRAN Center, 105 Middle Badda, Dhaka-1212.
-                </span>
+                <div className="flex items-center gap-2">
+                  <Phone className="w-3.5 h-3.5 text-[#E5252B] flex-shrink-0" />
+                  <a
+                    href="tel:+8802588814123"
+                    className="text-neutral-200 hover:text-[#E5252B] transition-colors"
+                  >
+                    +8802588814123
+                  </a>
+                </div>
               </div>
 
               <div>
                 <span className="text-[10px] text-neutral-400 font-bold uppercase tracking-wider block">
                   E-MAIL
                 </span>
-                <a
-                  href="mailto:mktg980@prangroup.com"
-                  className="text-neutral-200 hover:text-[#E5252B] transition-colors"
-                >
-                  mktg980@prangroup.com
-                </a>
+                <div className="flex items-center gap-2">
+                  <Mail className="w-3.5 h-3.5 text-[#E5252B] flex-shrink-0" />
+                  <a
+                    href="mailto:inforngroupbd@gmail.com"
+                    className="text-neutral-200 hover:text-[#E5252B] transition-colors"
+                  >
+                    inforngroupbd@gmail.com
+                  </a>
+                </div>
+              </div>
+
+              <div>
+                <span className="text-[10px] text-neutral-400 font-bold uppercase tracking-wider block">
+                  WEBSITE
+                </span>
+                <div className="flex items-center gap-2">
+                  <Globe className="w-3.5 h-3.5 text-[#E5252B] flex-shrink-0" />
+                  <a
+                    href="https://www.rngroupinfo.com"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-neutral-200 hover:text-[#E5252B] transition-colors"
+                  >
+                    www.rngroupinfo.com
+                  </a>
+                </div>
+              </div>
+
+              <div>
+                <span className="text-[10px] text-neutral-400 font-bold uppercase tracking-wider block">
+                  ADDRESS
+                </span>
+                <div className="flex items-start gap-2">
+                  <MapPin className="w-3.5 h-3.5 text-[#E5252B] flex-shrink-0 mt-0.5" />
+                  <span className="text-neutral-200 leading-relaxed">
+                    Holding no 9/2, 4th Floor, Avenue 5, Block B, Section 6, Mirpur, Dhaka-1216.
+                  </span>
+                </div>
               </div>
             </div>
           </div>

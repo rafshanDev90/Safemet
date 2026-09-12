@@ -1,11 +1,38 @@
 import React, { useState } from 'react';
 import { ASSETS } from '../data';
-import { Mail, MapPin, Phone, CheckCircle2 } from 'lucide-react';
+import { Mail, MapPin, Phone, Globe, CheckCircle2 } from 'lucide-react';
 import { Container } from './Container';
 
 interface ContactPageProps {
   onNavigateHome?: () => void;
 }
+
+const OFFICES = [
+  {
+    id: 'office-1',
+    title: 'Dhaka Office',
+    address: 'Holding no 9/2, 4th Floor, Avenue 5, Block B, Section 6, Mirpur, Dhaka-1216',
+    contact: '01992592281',
+  },
+  {
+    id: 'office-2',
+    title: 'Bogura Office',
+    address: 'Prottasha, Riyaz Kazi Lane, Sutrapur, Bogura-5800',
+    contact: '01826603900',
+  },
+  {
+    id: 'office-3',
+    title: 'Rajshahi Office',
+    address: 'City Bypass Road, Court Station Mor, Rajshahi',
+    contact: '01846-310833',
+  },
+  {
+    id: 'office-4',
+    title: 'Malaysia Office',
+    address: 'Court 10, Jalan SS15, 47500, Subang Jaya, Selangor, Malaysia',
+    contact: '',
+  },
+];
 
 export const ContactPage: React.FC<ContactPageProps> = ({ onNavigateHome }) => {
   const [formData, setFormData] = useState({
@@ -197,18 +224,34 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigateHome }) => {
                 </div>
               </div>
 
-              {/* TELEPHONE */}
+              {/* HOTLINE */}
               <div className="space-y-2 pb-6 border-b border-neutral-200">
                 <h3 className="text-[11px] font-extrabold uppercase tracking-wider text-neutral-900">
-                  FREE CONSULTATION
+                  HOTLINE
                 </h3>
                 <div className="flex items-center gap-2.5 text-[#C22126]">
                   <Phone className="w-4 h-4 text-[#C22126] stroke-[2.5]" />
                   <a
-                    href="tel:+08007777777"
+                    href="tel:+8801742264946"
                     className="text-xs sm:text-[13px] font-bold text-neutral-800 hover:text-[#E5252B] transition-colors"
                   >
-                    +0800-7777777
+                    +8801742-264946
+                  </a>
+                </div>
+              </div>
+
+              {/* LANDLINE */}
+              <div className="space-y-2 pb-6 border-b border-neutral-200">
+                <h3 className="text-[11px] font-extrabold uppercase tracking-wider text-neutral-900">
+                  LANDLINE
+                </h3>
+                <div className="flex items-center gap-2.5 text-[#C22126]">
+                  <Phone className="w-4 h-4 text-[#C22126] stroke-[2.5]" />
+                  <a
+                    href="tel:+8802588814123"
+                    className="text-xs sm:text-[13px] font-bold text-neutral-800 hover:text-[#E5252B] transition-colors"
+                  >
+                    +8802588814123
                   </a>
                 </div>
               </div>
@@ -221,10 +264,28 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigateHome }) => {
                 <div className="flex items-center gap-2.5">
                   <Mail className="w-4 h-4 text-[#C22126] stroke-[2]" />
                   <a
-                    href="mailto:mktg980@prangroup.com"
+                    href="mailto:inforngroupbd@gmail.com"
                     className="text-xs sm:text-[13px] font-medium text-neutral-700 hover:text-[#E5252B] transition-colors"
                   >
-                    mktg980@prangroup.com
+                    inforngroupbd@gmail.com
+                  </a>
+                </div>
+              </div>
+
+              {/* WEBSITE */}
+              <div className="space-y-2 pb-6 border-b border-neutral-200">
+                <h3 className="text-[11px] font-extrabold uppercase tracking-wider text-neutral-900">
+                  WEBSITE
+                </h3>
+                <div className="flex items-center gap-2.5">
+                  <Globe className="w-4 h-4 text-[#C22126] stroke-[2]" />
+                  <a
+                    href="https://www.rngroupinfo.com"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-xs sm:text-[13px] font-medium text-neutral-700 hover:text-[#E5252B] transition-colors"
+                  >
+                    www.rngroupinfo.com
                   </a>
                 </div>
               </div>
@@ -237,11 +298,63 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigateHome }) => {
                 <div className="flex items-start gap-2.5 text-neutral-700">
                   <MapPin className="w-4 h-4 text-[#C22126] stroke-[2] flex-shrink-0 mt-0.5" />
                   <span className="text-xs sm:text-[13px] font-medium leading-relaxed">
-                    PRAN Center, 105 Middle Badda, Dhaka-1212.
+                    Holding no 9/2, 4th Floor, Avenue 5, Block B, Section 6, Mirpur, Dhaka-1216.
                   </span>
                 </div>
               </div>
             </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* 4. OUR OFFICES */}
+      <section className="w-full bg-[#f4f5f6] py-14 sm:py-18 md:py-20 border-t border-neutral-200">
+        <Container>
+          {/* Section Header */}
+          <div className="flex items-center gap-4 pb-6 mb-10 border-b border-neutral-300">
+            <div className="w-8 md:w-12 h-[2.5px] bg-[#222629]" />
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-[#1f2427] tracking-wider uppercase font-['Montserrat',sans-serif]">
+              OUR OFFICES
+            </h2>
+          </div>
+
+          {/* Office Cards Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6">
+            {OFFICES.map((office) => (
+              <div
+                key={office.id}
+                id={`office-card-${office.id}`}
+                className="bg-white border border-neutral-200 p-6 sm:p-7 flex flex-col space-y-4 shadow-sm group"
+              >
+                {/* Icon in Circular Badge */}
+                <div className="w-12 h-12 rounded-full bg-[#fde8e9] border border-[#f8b4b7] flex items-center justify-center group-hover:bg-[#E5252B] group-hover:border-[#E5252B] transition-all duration-300">
+                  <MapPin className="w-5 h-5 text-[#E5252B] group-hover:text-white transition-colors duration-300" />
+                </div>
+
+                {/* Office Title */}
+                <h3 className="text-xs sm:text-[13px] font-extrabold uppercase tracking-wider text-[#1e2327] font-['Montserrat',sans-serif]">
+                  {office.title}
+                </h3>
+
+                {/* Office Address */}
+                <p className="text-xs text-neutral-600 leading-relaxed">
+                  {office.address}
+                </p>
+
+                {/* Office Contact */}
+                {office.contact && (
+                  <div className="flex items-center gap-2 pt-3 border-t border-neutral-200 mt-auto">
+                    <Phone className="w-3.5 h-3.5 text-[#C22126] stroke-[2.5] flex-shrink-0" />
+                    <a
+                      href={`tel:${office.contact.replace(/[^0-9+]/g, '')}`}
+                      className="text-xs font-bold text-neutral-800 hover:text-[#E5252B] transition-colors"
+                    >
+                      {office.contact}
+                    </a>
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
         </Container>
       </section>
