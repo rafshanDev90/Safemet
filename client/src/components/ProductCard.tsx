@@ -15,7 +15,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   const renderGraphic = () => {
     if (product.graphicType === 'osy-flanged') {
       return (
-        <svg viewBox="0 0 200 240" className="w-44 h-52 text-red-600 drop-shadow-md">
+        <svg viewBox="0 0 200 240" className="w-52 h-60 text-red-600 drop-shadow-md">
           <ellipse cx="100" cy="25" rx="45" ry="12" fill="none" stroke="#222" strokeWidth="6" />
           <line x1="100" y1="13" x2="100" y2="37" stroke="#222" strokeWidth="4" />
           <line x1="55" y1="25" x2="145" y2="25" stroke="#222" strokeWidth="4" />
@@ -39,7 +39,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
 
     if (product.graphicType === 'osy-grooved') {
       return (
-        <svg viewBox="0 0 200 240" className="w-44 h-52 text-red-600 drop-shadow-md">
+        <svg viewBox="0 0 200 240" className="w-52 h-60 text-red-600 drop-shadow-md">
           <ellipse cx="100" cy="25" rx="45" ry="12" fill="none" stroke="#222" strokeWidth="6" />
           <line x1="100" y1="13" x2="100" y2="37" stroke="#222" strokeWidth="4" />
           <line x1="55" y1="25" x2="145" y2="25" stroke="#222" strokeWidth="4" />
@@ -57,7 +57,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
 
     if (product.graphicType === 'pillar-hydrant') {
       return (
-        <svg viewBox="0 0 200 240" className="w-44 h-52 drop-shadow-md">
+        <svg viewBox="0 0 200 240" className="w-52 h-60 drop-shadow-md">
           <polygon points="90,20 110,20 115,35 85,35" fill="#a00" stroke="#600" strokeWidth="1.5" />
           <path d="M70,55 Q100,32 130,55 Z" fill="#d32f2f" stroke="#800" strokeWidth="2" />
           <rect x="75" y="55" width="50" height="40" fill="#e5252b" stroke="#b01015" strokeWidth="2" />
@@ -79,7 +79,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
       product.graphicType === 'sprinkler-flush'
     ) {
       return (
-        <svg viewBox="0 0 160 200" className="w-36 h-48 drop-shadow-md">
+        <svg viewBox="0 0 160 200" className="w-44 h-56 drop-shadow-md">
           <rect x="60" y="30" width="40" height="35" rx="1" fill="#d4af37" stroke="#aa8c2c" strokeWidth="2" />
           <line x1="60" y1="40" x2="100" y2="40" stroke="#8c7324" strokeWidth="2" />
           <line x1="60" y1="50" x2="100" y2="50" stroke="#8c7324" strokeWidth="2" />
@@ -101,7 +101,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
 
     if (product.graphicType === 'pressure-gauge') {
       return (
-        <svg viewBox="0 0 180 200" className="w-40 h-48 drop-shadow-md">
+        <svg viewBox="0 0 180 200" className="w-48 h-56 drop-shadow-md">
           <rect x="80" y="145" width="20" height="35" fill="#d4af37" stroke="#aa8c2c" strokeWidth="2" />
           <circle cx="90" cy="85" r="65" fill="#f8f9fa" stroke="#444" strokeWidth="7" />
           <circle cx="90" cy="85" r="58" fill="#ffffff" stroke="#ccc" strokeWidth="1" />
@@ -116,7 +116,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
 
     if (product.graphicType === 'flow-switch') {
       return (
-        <svg viewBox="0 0 200 200" className="w-44 h-48 drop-shadow-md">
+        <svg viewBox="0 0 200 200" className="w-52 h-56 drop-shadow-md">
           <path d="M60 130 C60 180 140 180 140 130" fill="none" stroke="#888" strokeWidth="8" />
           <rect x="52" y="125" width="16" height="10" fill="#222" />
           <rect x="132" y="125" width="16" height="10" fill="#222" />
@@ -129,7 +129,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
 
     if (product.graphicType === 'sprinkler-sidewall') {
       return (
-        <svg viewBox="0 0 180 200" className="w-40 h-48 drop-shadow-md">
+        <svg viewBox="0 0 180 200" className="w-48 h-56 drop-shadow-md">
           <rect x="25" y="85" width="40" height="30" fill="#d4af37" stroke="#aa8c2c" strokeWidth="2" />
           <rect x="65" y="80" width="15" height="40" fill="#c5a028" stroke="#8c7324" strokeWidth="1.5" />
           <path d="M80 85 L130 75 M80 115 L130 125" stroke="#d4af37" strokeWidth="5" strokeLinecap="round" />
@@ -144,7 +144,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
       <img
         src={product.image}
         alt={product.name}
-        className="max-h-[220px] sm:max-h-[240px] w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+        className="max-h-[260px] sm:max-h-[300px] w-auto object-contain transition-transform duration-300 group-hover:scale-105"
       />
     );
   };
@@ -156,19 +156,19 @@ export const ProductCard: React.FC<ProductCardProps> = ({
       className="group flex flex-col cursor-pointer transition-all duration-200"
     >
       {/* Product Image on Pure White Background */}
-      <div className="w-full h-[240px] sm:h-[270px] lg:h-[290px] flex items-center justify-center p-4 bg-white transition-all duration-300">
+      <div className="w-full h-[300px] sm:h-[340px] lg:h-[380px] flex items-center justify-center p-4 bg-white transition-all duration-300">
         {renderGraphic()}
       </div>
 
       {/* Number and Product Title Row */}
-      <div className="mt-4 flex items-center">
+      <div className="mt-5 flex items-center">
         {/* Large Light-Gray Bold Number (e.g., 01, 02...) */}
-        <span className="text-4xl sm:text-5xl lg:text-[54px] font-black text-neutral-200 group-hover:text-neutral-300 transition-colors tracking-tighter mr-3 sm:mr-4 shrink-0 leading-none select-none">
+        <span className="text-5xl sm:text-[54px] lg:text-[62px] font-black text-neutral-200 group-hover:text-neutral-300 transition-colors tracking-tighter mr-4 sm:mr-5 shrink-0 leading-none select-none">
           {displayNumber}
         </span>
 
         {/* Product Name in Bold */}
-        <h3 className="text-[13px] sm:text-[14px] font-bold text-[#1f2428] group-hover:text-[#E5252B] transition-colors uppercase leading-snug">
+        <h3 className="text-[15px] sm:text-base font-bold text-[#1f2428] group-hover:text-[#E5252B] transition-colors uppercase leading-snug">
           {product.name}
         </h3>
       </div>

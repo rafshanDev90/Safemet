@@ -24,7 +24,7 @@ export const QuoteSection: React.FC = () => {
   return (
     <section id="contact" className="relative w-full overflow-hidden bg-black text-white">
       {/* Background Image Container */}
-      <div className="relative w-full min-h-[480px] lg:min-h-[560px]">
+      <div className="relative w-full min-h-[560px] lg:min-h-[680px]">
         <img
           src={ASSETS.firefighterBg}
           alt="Firefighter Request a Quote"
@@ -41,9 +41,9 @@ export const QuoteSection: React.FC = () => {
           <Container>
             <div className="max-w-xl">
             {/* Header Line & Title */}
-            <div className="flex items-center gap-4 mb-8">
+            <div className="flex items-center gap-4 mb-10">
               <div className="w-8 md:w-12 h-[2.5px] bg-white" />
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-white tracking-wider uppercase font-['Montserrat',sans-serif]">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-wider uppercase font-['Montserrat',sans-serif]">
                 REQUEST A QUOTE
               </h2>
             </div>
@@ -52,8 +52,8 @@ export const QuoteSection: React.FC = () => {
             {submitted ? (
               <div className="bg-white/10 backdrop-blur-md border border-emerald-500/50 p-6 rounded-xs text-center flex flex-col items-center justify-center animate-fadeIn">
                 <CheckCircle2 className="w-12 h-12 text-emerald-400 mb-3" />
-                <h4 className="text-lg font-bold text-white mb-1">Quote Request Sent!</h4>
-                <p className="text-xs text-neutral-300">
+                <h4 className="text-xl font-bold text-white mb-1">Quote Request Sent!</h4>
+                <p className="text-sm text-neutral-300">
                   Our fire safety engineering department will contact you within 24 hours.
                 </p>
               </div>
@@ -66,7 +66,7 @@ export const QuoteSection: React.FC = () => {
                     placeholder="Your Name*"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full bg-white text-neutral-900 placeholder:text-neutral-500 px-4 py-3 text-xs sm:text-sm font-medium border border-neutral-300 focus:outline-none focus:ring-2 focus:ring-[#E5252B] transition-all rounded-none"
+                    className="w-full bg-white text-neutral-900 placeholder:text-neutral-500 px-5 py-4 text-sm sm:text-base font-medium border border-neutral-300 focus:outline-none focus:ring-2 focus:ring-[#E5252B] transition-all rounded-none"
                   />
                 </div>
 
@@ -77,7 +77,7 @@ export const QuoteSection: React.FC = () => {
                     placeholder="Your E-mail*"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full bg-white text-neutral-900 placeholder:text-neutral-500 px-4 py-3 text-xs sm:text-sm font-medium border border-neutral-300 focus:outline-none focus:ring-2 focus:ring-[#E5252B] transition-all rounded-none"
+                    className="w-full bg-white text-neutral-900 placeholder:text-neutral-500 px-5 py-4 text-sm sm:text-base font-medium border border-neutral-300 focus:outline-none focus:ring-2 focus:ring-[#E5252B] transition-all rounded-none"
                   />
                 </div>
 
@@ -88,7 +88,7 @@ export const QuoteSection: React.FC = () => {
                     placeholder="Your Phone *"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full bg-white text-neutral-900 placeholder:text-neutral-500 px-4 py-3 text-xs sm:text-sm font-medium border border-neutral-300 focus:outline-none focus:ring-2 focus:ring-[#E5252B] transition-all rounded-none"
+                    className="w-full bg-white text-neutral-900 placeholder:text-neutral-500 px-5 py-4 text-sm sm:text-base font-medium border border-neutral-300 focus:outline-none focus:ring-2 focus:ring-[#E5252B] transition-all rounded-none"
                   />
                 </div>
 
@@ -106,7 +106,7 @@ export const QuoteSection: React.FC = () => {
                   <button
                     type="submit"
                     id="submit-quote-btn"
-                    className="bg-[#C22126] hover:bg-[#a51a1e] text-white font-extrabold text-xs sm:text-sm tracking-widest uppercase px-10 py-3.5 transition-colors duration-200 cursor-pointer shadow-md rounded-none"
+                    className="bg-[#C22126] hover:bg-[#a51a1e] text-white font-extrabold text-sm tracking-widest uppercase px-12 py-4 sm:px-14 sm:py-5 transition-colors duration-200 cursor-pointer shadow-md rounded-none"
                   >
                     SUBMIT
                   </button>

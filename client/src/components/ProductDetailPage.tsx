@@ -36,7 +36,7 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
   if (loading && !product) {
     return (
       <div className="w-full bg-white font-['Montserrat',sans-serif]">
-        <section className="relative w-full h-[200px] flex items-center justify-center bg-[#1a1e21]">
+        <section className="relative w-full h-[280px] sm:h-[350px] lg:h-[450px] bg-[#1a1e21] overflow-hidden flex items-center justify-center">
           <h1 className="text-3xl font-extrabold text-white uppercase tracking-wider">PRODUCT</h1>
         </section>
         <div className="max-w-2xl mx-auto px-4 py-16 text-center text-sm font-semibold text-neutral-400 uppercase tracking-wider">
@@ -50,7 +50,7 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
   if (!product) {
     return (
       <div className="w-full bg-white font-['Montserrat',sans-serif]" id="product-not-found">
-        <section className="relative w-full h-[200px] flex items-center justify-center bg-[#1a1e21]">
+        <section className="relative w-full h-[280px] sm:h-[350px] lg:h-[450px] bg-[#1a1e21] overflow-hidden flex items-center justify-center">
           <h1 className="text-3xl font-extrabold text-white uppercase tracking-wider">PRODUCT</h1>
         </section>
         <div className="max-w-2xl mx-auto px-4 py-16 text-center">
@@ -59,7 +59,7 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
           <p className="text-neutral-500 text-sm mb-6">The requested product could not be located in our catalog.</p>
           <button
             onClick={() => onNavigateCategory && onNavigateCategory('fire-protection-system')}
-            className="px-5 py-2.5 bg-[#E5252B] text-white text-xs font-bold uppercase tracking-wider rounded hover:bg-[#c81e1e] transition-colors"
+            className="px-6 py-3 bg-[#E5252B] text-white text-sm font-bold uppercase tracking-wider rounded hover:bg-[#c81e1e] transition-colors"
           >
             Back to Products
           </button>
@@ -89,7 +89,7 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
     <div className="w-full bg-white font-['Montserrat',sans-serif]" id="product-detail-page">
       {/* 1. HERO BREADCRUMB BANNER (Night City Skyline) */}
       <section
-        className="relative w-full h-[210px] sm:h-[250px] lg:h-[290px] flex flex-col items-center justify-center bg-cover bg-center overflow-hidden"
+        className="relative w-full h-[320px] sm:h-[400px] lg:h-[500px] flex flex-col items-center justify-center bg-cover bg-center overflow-hidden"
         style={{
           backgroundImage: `url(${ASSETS.nightCitySkyline})`,
           backgroundPosition: 'center 40%',
@@ -100,17 +100,17 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
         <div className="absolute inset-0 bg-black/35" />
 
         <div className="relative z-10 text-center px-4">
-          <h1 className="text-3xl sm:text-4xl lg:text-[44px] font-black tracking-widest text-white uppercase drop-shadow-md">
+          <h1 className="text-4xl sm:text-5xl lg:text-[56px] font-black tracking-widest text-white uppercase drop-shadow-md">
             PRODUCT
           </h1>
           {/* Thin horizontal underline below PRODUCT */}
-          <div className="w-16 h-[2px] bg-white/90 mx-auto mt-3" />
+          <div className="w-20 h-[2px] bg-white/90 mx-auto mt-4" />
         </div>
       </section>
 
       {/* 2. BREADCRUMB BAR */}
-      <div className="w-full bg-[#f2f2f2] border-b border-neutral-200 py-3">
-        <Container className="flex flex-wrap items-center justify-center text-[11px] sm:text-[12px] font-semibold text-neutral-600 tracking-wider uppercase text-center gap-y-1">
+      <div className="w-full bg-[#f2f2f2] border-b border-neutral-200 py-3.5 sm:py-4">
+        <Container className="flex flex-wrap items-center justify-center text-[13px] sm:text-sm font-semibold text-neutral-600 tracking-wider uppercase text-center gap-y-1">
           <button
             onClick={onNavigateHome}
             className="hover:text-[#E5252B] transition-colors cursor-pointer"
@@ -132,24 +132,24 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
       </div>
 
       {/* 3. MAIN PRODUCT DETAILS SECTION */}
-      <section className="w-full pt-8 sm:pt-12 pb-12 sm:pb-16">
+      <section className="w-full pt-10 sm:pt-14 pb-16 sm:pb-24">
         <Container>
           {/* Two-Column Product Overview */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-start">
             {/* Left Column: Product Image on White Background */}
-            <div className="lg:col-span-5 flex items-center justify-center p-4 sm:p-6 lg:p-8 bg-white min-h-[260px] sm:min-h-[360px] lg:min-h-[460px]">
+            <div className="lg:col-span-5 flex items-center justify-center p-4 sm:p-6 lg:p-8 bg-white min-h-[320px] sm:min-h-[420px] lg:min-h-[520px]">
               {renderProductGraphic(product)}
             </div>
 
             {/* Right Column: Title, Category, Specification List */}
             <div className="lg:col-span-7 flex flex-col justify-start pt-1 sm:pt-4">
               {/* Product Title */}
-              <h2 className="text-xl sm:text-2xl lg:text-[32px] font-extrabold text-[#1a1e21] tracking-tight mb-2">
+              <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-extrabold text-[#1a1e21] tracking-tight mb-2">
                 {product.name}
               </h2>
 
               {/* Category */}
-              <div className="text-[13px] text-neutral-600 mb-6 font-medium">
+              <div className="text-sm sm:text-[15px] text-neutral-600 mb-8 font-medium">
                 <span className="font-normal text-neutral-700">Category: </span>
                 <button
                   onClick={() => onNavigateCategory && onNavigateCategory(product.category)}
@@ -161,7 +161,7 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
 
               {/* Specifications Key-Value List */}
               {product.specs && product.specs.length > 0 && (
-                <div className="space-y-1.5 text-[13px] sm:text-[14px] text-[#2c3236]">
+                <div className="space-y-1.5 text-[15px] sm:text-base text-[#2c3236]">
                   {product.specs.map((spec) => (
                     <div key={spec.label} className="leading-relaxed">
                       <span className="font-semibold text-[#1e2327]">
@@ -183,9 +183,9 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
             {/* Bordered Accordion Header Box */}
             <button
               onClick={() => setAccordionOpen(!accordionOpen)}
-              className="w-full text-left border border-neutral-300/80 bg-white px-5 sm:px-6 py-3.5 flex items-center justify-between cursor-pointer hover:bg-neutral-50/70 transition-colors"
+              className="w-full text-left border border-neutral-300/80 bg-white px-6 py-4 flex items-center justify-between cursor-pointer hover:bg-neutral-50/70 transition-colors"
             >
-              <span className="text-[12px] sm:text-[13px] font-extrabold tracking-wider uppercase text-[#E5252B]">
+              <span className="text-[14px] sm:text-[15px] font-extrabold tracking-wider uppercase text-[#E5252B]">
                 ADDITIONAL INFORMATION
               </span>
               <span className="text-neutral-400">
@@ -199,7 +199,7 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
 
             {/* Accordion Content */}
             {accordionOpen && (
-              <div className="pt-5 pb-2 px-1 text-[13px] sm:text-[14px] leading-relaxed text-[#444a50]">
+              <div className="pt-5 pb-2 px-1 text-[15px] sm:text-base leading-relaxed text-[#444a50]">
                 <p>{product.description}</p>
               </div>
             )}
@@ -208,8 +208,8 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
 
         {/* 5. RELATED PRODUCTS SECTION */}
         {relatedProducts.length > 0 && (
-          <div className="mt-20 pt-8 border-t border-neutral-200/70">
-            <h3 className="text-center text-xl sm:text-2xl font-black uppercase text-[#1a1e21] tracking-wider mb-12">
+          <div className="mt-24 pt-10 border-t border-neutral-200/70">
+            <h3 className="text-center text-2xl sm:text-3xl font-black uppercase text-[#1a1e21] tracking-wider mb-12">
               RELATED PRODUCTS
             </h3>
 
@@ -221,16 +221,16 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
                   className="group flex flex-col items-center cursor-pointer"
                 >
                   {/* Product Card Image Container */}
-                  <div className="w-full h-[280px] sm:h-[320px] flex items-center justify-center p-6 bg-white transition-all duration-300">
+                  <div className="w-full h-[320px] sm:h-[360px] flex items-center justify-center p-6 bg-white transition-all duration-300">
                     <img
                       src={prod.image || ASSETS.electricPump}
                       alt={prod.name}
-                      className="max-h-[240px] sm:max-h-[270px] w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                      className="max-h-[260px] sm:max-h-[300px] w-auto object-contain transition-transform duration-300 group-hover:scale-105"
                     />
                   </div>
 
                   {/* Product Title */}
-                  <h4 className="mt-4 text-center text-[14px] sm:text-[15px] font-bold text-[#1f2428] group-hover:text-[#E5252B] transition-colors">
+                  <h4 className="mt-4 text-center text-base sm:text-lg font-bold text-[#1f2428] group-hover:text-[#E5252B] transition-colors">
                     {prod.name}
                   </h4>
                 </div>

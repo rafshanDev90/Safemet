@@ -26,26 +26,26 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
   return (
     <footer className="w-full bg-[#1e2327] text-white relative font-['Montserrat',sans-serif]">
       {/* Main Footer Container */}
-      <div className="w-full py-12 md:py-16">
+      <div className="w-full py-16 md:py-20">
         <Container>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-16">
           {/* Column 1: About Us */}
           <div className="flex flex-col space-y-4">
-            <h4 className="text-xs sm:text-[13px] font-extrabold uppercase tracking-wider flex items-center gap-2 text-white">
+            <h4 className="text-sm sm:text-[15px] font-extrabold uppercase tracking-wider flex items-center gap-2 text-white">
               <span className="w-2.5 h-2.5 bg-[#E5252B] inline-block" />
               ABOUT US
             </h4>
-            <p className="text-[11px] sm:text-xs text-neutral-300 leading-relaxed">
+            <p className="text-[13px] sm:text-sm text-neutral-300 leading-relaxed">
               Safemet Fire Safety Equipment &amp; Solution as expressed by the name is dedicated to provide quality fire safety products and services. All of the products are imported from various countries of first world which are UL listed and FM approved.
             </p>
             {/* Social Icons */}
-            <div className="flex items-center space-x-2 pt-2">
+            <div className="flex items-center space-x-2.5 pt-2">
               <a
                 href="https://facebook.com"
                 target="_blank"
                 rel="noreferrer"
                 id="footer-fb"
-                className="w-7 h-7 bg-[#2e353c] hover:bg-[#E5252B] transition-colors flex items-center justify-center text-white text-xs font-bold font-serif"
+                className="w-9 h-9 bg-[#2e353c] hover:bg-[#E5252B] transition-colors flex items-center justify-center text-white text-sm font-bold font-serif"
                 aria-label="Facebook"
               >
                 f
@@ -55,7 +55,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 target="_blank"
                 rel="noreferrer"
                 id="footer-in"
-                className="w-7 h-7 bg-[#2e353c] hover:bg-[#E5252B] transition-colors flex items-center justify-center text-white text-xs font-bold font-sans"
+                className="w-9 h-9 bg-[#2e353c] hover:bg-[#E5252B] transition-colors flex items-center justify-center text-white text-sm font-bold font-sans"
                 aria-label="LinkedIn"
               >
                 in
@@ -65,18 +65,18 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
           {/* Column 2: Get In Touch */}
           <div className="flex flex-col space-y-4">
-            <h4 className="text-xs sm:text-[13px] font-extrabold uppercase tracking-wider flex items-center gap-2 text-white">
+            <h4 className="text-sm sm:text-[15px] font-extrabold uppercase tracking-wider flex items-center gap-2 text-white">
               <span className="w-2.5 h-2.5 bg-[#E5252B] inline-block" />
               GET IN TOUCH
             </h4>
 
-            <div className="space-y-3 text-[11px] sm:text-xs">
+            <div className="space-y-3 text-[13px] sm:text-sm">
               <div>
-                <span className="text-[10px] text-neutral-400 font-bold uppercase tracking-wider block">
+                <span className="text-[12px] text-neutral-400 font-bold uppercase tracking-wider block">
                   HOTLINE
                 </span>
                 <div className="flex items-center gap-2">
-                  <Phone className="w-3.5 h-3.5 text-[#E5252B] flex-shrink-0" />
+                  <Phone className="w-4 h-4 text-[#E5252B] flex-shrink-0" />
                   <a
                     href="tel:+8801742264946"
                     className="text-white font-bold hover:text-[#E5252B] transition-colors"
@@ -87,11 +87,11 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               </div>
 
               <div>
-                <span className="text-[10px] text-neutral-400 font-bold uppercase tracking-wider block">
+                <span className="text-[12px] text-neutral-400 font-bold uppercase tracking-wider block">
                   LANDLINE
                 </span>
                 <div className="flex items-center gap-2">
-                  <Phone className="w-3.5 h-3.5 text-[#E5252B] flex-shrink-0" />
+                  <Phone className="w-4 h-4 text-[#E5252B] flex-shrink-0" />
                   <a
                     href="tel:+8802588814123"
                     className="text-neutral-200 hover:text-[#E5252B] transition-colors"
@@ -102,11 +102,11 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               </div>
 
               <div>
-                <span className="text-[10px] text-neutral-400 font-bold uppercase tracking-wider block">
+                <span className="text-[12px] text-neutral-400 font-bold uppercase tracking-wider block">
                   E-MAIL
                 </span>
                 <div className="flex items-center gap-2">
-                  <Mail className="w-3.5 h-3.5 text-[#E5252B] flex-shrink-0" />
+                  <Mail className="w-4 h-4 text-[#E5252B] flex-shrink-0" />
                   <a
                     href="mailto:inforngroupbd@gmail.com"
                     className="text-neutral-200 hover:text-[#E5252B] transition-colors"
@@ -117,11 +117,11 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               </div>
 
               <div>
-                <span className="text-[10px] text-neutral-400 font-bold uppercase tracking-wider block">
+                <span className="text-[12px] text-neutral-400 font-bold uppercase tracking-wider block">
                   WEBSITE
                 </span>
                 <div className="flex items-center gap-2">
-                  <Globe className="w-3.5 h-3.5 text-[#E5252B] flex-shrink-0" />
+                  <Globe className="w-4 h-4 text-[#E5252B] flex-shrink-0" />
                   <a
                     href="https://www.rngroupinfo.com"
                     target="_blank"
@@ -134,11 +134,11 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               </div>
 
               <div>
-                <span className="text-[10px] text-neutral-400 font-bold uppercase tracking-wider block">
+                <span className="text-[12px] text-neutral-400 font-bold uppercase tracking-wider block">
                   ADDRESS
                 </span>
                 <div className="flex items-start gap-2">
-                  <MapPin className="w-3.5 h-3.5 text-[#E5252B] flex-shrink-0 mt-0.5" />
+                  <MapPin className="w-4 h-4 text-[#E5252B] flex-shrink-0 mt-0.5" />
                   <span className="text-neutral-200 leading-relaxed">
                     Holding no 9/2, 4th Floor, Avenue 5, Block B, Section 6, Mirpur, Dhaka-1216.
                   </span>
@@ -149,12 +149,12 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
           {/* Column 3: Useful Links */}
           <div className="flex flex-col space-y-4">
-            <h4 className="text-xs sm:text-[13px] font-extrabold uppercase tracking-wider flex items-center gap-2 text-white">
+            <h4 className="text-sm sm:text-[15px] font-extrabold uppercase tracking-wider flex items-center gap-2 text-white">
               <span className="w-2.5 h-2.5 bg-[#E5252B] inline-block" />
               USEFUL LINKS
             </h4>
 
-            <ul className="space-y-2 text-[11px] sm:text-xs">
+            <ul className="space-y-2.5 text-[13px] sm:text-sm">
               <li>
                 <a
                   href="#home"
@@ -218,7 +218,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
       {/* Copyright Sub-footer */}
       <div className="w-full bg-[#161a1d] py-4 border-t border-neutral-800/80">
         <Container className="text-center">
-          <p className="text-[11px] text-neutral-400 font-normal">
+          <p className="text-[13px] text-neutral-400 font-normal">
             © 2026. All Rights Reserved
           </p>
         </Container>

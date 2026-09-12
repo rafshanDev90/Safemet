@@ -12,22 +12,22 @@ export const AdvantagesSection: React.FC = () => {
       <Container className="px-0 sm:px-4 lg:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2">
           {/* Left Column: Why Choose Us / Accordion */}
-          <div className="p-6 sm:p-10 lg:p-16 flex flex-col justify-center bg-[#202528]">
+          <div className="p-8 sm:p-12 lg:p-20 flex flex-col justify-center bg-[#202528]">
             {/* Subtitle */}
-            <div className="flex items-center gap-3 mb-2">
+            <div className="flex items-center gap-3 mb-3">
               <div className="w-6 h-[1.5px] bg-[#E5252B]" />
-              <span className="text-[11px] font-bold tracking-[0.25em] text-[#9ca3af] uppercase font-['Montserrat',sans-serif]">
+              <span className="text-[13px] font-bold tracking-[0.25em] text-[#9ca3af] uppercase font-['Montserrat',sans-serif]">
                 WHY CHOOSE US
               </span>
             </div>
 
             {/* Main Headline */}
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white uppercase tracking-wider mb-6 sm:mb-8 font-['Montserrat',sans-serif]">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white uppercase tracking-wider mb-8 sm:mb-10 font-['Montserrat',sans-serif]">
               OUR ADVANTAGES
             </h2>
 
             {/* Advantages Interactive Accordion */}
-            <div className="space-y-2.5 sm:space-y-3">
+            <div className="space-y-3 sm:space-y-4">
               {ADVANTAGES.map((adv) => {
                 const isOpen = activeTab === adv.id;
                 return (
@@ -38,21 +38,21 @@ export const AdvantagesSection: React.FC = () => {
                   >
                     <button
                       onClick={() => setActiveTab(isOpen ? '' : adv.id)}
-                      className={`w-full min-h-[44px] text-left px-4 sm:px-5 py-3 flex items-center justify-between text-xs sm:text-[13px] font-bold tracking-wider uppercase transition-colors cursor-pointer ${
+                      className={`w-full min-h-[44px] text-left px-5 sm:px-6 py-4 flex items-center justify-between text-sm sm:text-[15px] font-bold tracking-wider uppercase transition-colors cursor-pointer ${
                         isOpen
                           ? 'bg-[#2b3136] text-white border-l-2 border-[#E5252B]'
                           : 'bg-[#2a3035] text-neutral-300 hover:bg-[#343b42] hover:text-white'
                       }`}
                     >
                       <span className="flex items-center gap-2">
-                        <span className="text-[#E5252B] font-bold text-base leading-none">—</span>
+                        <span className="text-[#E5252B] font-bold text-lg leading-none">—</span>
                         <span>{adv.title}</span>
                       </span>
                     </button>
 
                     {/* Content Collapse */}
                     {isOpen && (
-                      <div className="bg-[#1f2428] px-5 sm:px-6 py-4 text-xs sm:text-[13px] text-neutral-300 leading-relaxed border-l-2 border-[#E5252B] animate-fadeIn">
+                      <div className="bg-[#1f2428] px-6 sm:px-7 py-5 text-sm sm:text-[15px] text-neutral-300 leading-relaxed border-l-2 border-[#E5252B] animate-fadeIn">
                         {adv.content}
                       </div>
                     )}
@@ -63,7 +63,7 @@ export const AdvantagesSection: React.FC = () => {
           </div>
 
           {/* Right Column: TVC Video Banner */}
-          <div className="relative w-full min-h-[260px] sm:min-h-[360px] lg:min-h-[500px] overflow-hidden group bg-black">
+          <div className="relative w-full min-h-[320px] sm:min-h-[440px] lg:min-h-[620px] overflow-hidden group bg-black">
           <img
             src={ASSETS.tvcWoman}
             alt="Safemete TVC Fire Safety Presentation"
@@ -79,10 +79,10 @@ export const AdvantagesSection: React.FC = () => {
             onClick={() => setShowVideoModal(true)}
             className="absolute top-8 left-8 flex items-center gap-3 cursor-pointer group/btn"
           >
-            <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-xs flex items-center justify-center group-hover/btn:bg-[#E5252B] group-hover/btn:scale-110 transition-all duration-300">
-              <Play className="w-4 h-4 text-white fill-white ml-0.5" />
+            <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-xs flex items-center justify-center group-hover/btn:bg-[#E5252B] group-hover/btn:scale-110 transition-all duration-300">
+              <Play className="w-5 h-5 text-white fill-white ml-0.5" />
             </div>
-            <span className="text-white font-extrabold text-sm tracking-widest uppercase drop-shadow-md">
+            <span className="text-white font-extrabold text-lg tracking-widest uppercase drop-shadow-md">
               TVC
             </span>
           </div>
@@ -90,10 +90,10 @@ export const AdvantagesSection: React.FC = () => {
           {/* Floating Watch Commercial Button at Center */}
           <button
             onClick={() => setShowVideoModal(true)}
-            className="absolute inset-0 m-auto w-16 h-16 rounded-full bg-black/40 hover:bg-[#E5252B] border-2 border-white/80 flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-2xl focus:outline-none"
+            className="absolute inset-0 m-auto w-20 h-20 rounded-full bg-black/40 hover:bg-[#E5252B] border-2 border-white/80 flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-2xl focus:outline-none"
             aria-label="Play TV Commercial"
           >
-            <Play className="w-7 h-7 text-white fill-white ml-1" />
+            <Play className="w-9 h-9 text-white fill-white ml-1" />
           </button>
         </div>
         </div>

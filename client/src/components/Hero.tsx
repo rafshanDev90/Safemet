@@ -6,7 +6,7 @@ export const Hero: React.FC = () => {
   return (
     <section id="home" className="relative w-full overflow-hidden bg-neutral-900">
       {/* Background Image Container */}
-      <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px]">
+      <div className="relative w-full h-[360px] sm:h-[480px] md:h-[600px] lg:h-[761px]">
         <img
           src={ASSETS.heroCabinet}
           alt="Fire Safety Hose Cabinet"
@@ -25,7 +25,7 @@ export const Hero: React.FC = () => {
             target="_blank"
             rel="noreferrer"
             id="hero-social-fb"
-            className="w-8 h-8 bg-[#2f353b]/90 hover:bg-[#E5252B] transition-colors flex items-center justify-center text-white text-xs font-bold font-serif border-b border-neutral-700/50"
+            className="w-10 h-10 bg-[#2f353b]/90 hover:bg-[#E5252B] transition-colors flex items-center justify-center text-white text-sm font-bold font-serif border-b border-neutral-700/50"
             aria-label="Facebook"
           >
             f
@@ -35,7 +35,7 @@ export const Hero: React.FC = () => {
             target="_blank"
             rel="noreferrer"
             id="hero-social-in"
-            className="w-8 h-8 bg-[#2f353b]/90 hover:bg-[#E5252B] transition-colors flex items-center justify-center text-white text-xs font-bold font-sans"
+            className="w-10 h-10 bg-[#2f353b]/90 hover:bg-[#E5252B] transition-colors flex items-center justify-center text-white text-sm font-bold font-sans"
             aria-label="LinkedIn"
           >
             in
@@ -47,10 +47,10 @@ export const Hero: React.FC = () => {
           <Container className="flex flex-col justify-center">
             <div className="max-w-xl md:max-w-2xl pl-1 sm:pl-4">
               {/* Top Accent Line */}
-              <div className="w-12 sm:w-16 h-[2.5px] bg-white mb-3 sm:mb-5 shadow-sm" />
+              <div className="w-16 sm:w-20 h-[2.5px] bg-white mb-4 sm:mb-6 shadow-sm" />
 
               {/* Main Headline */}
-              <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-[54px] font-extrabold text-white uppercase tracking-wider leading-[1.15] drop-shadow-md font-['Montserrat',sans-serif]">
+              <h1 className="text-3xl sm:text-5xl lg:text-[64px] font-extrabold text-white uppercase tracking-wider leading-[1.15] drop-shadow-md font-['Montserrat',sans-serif]">
                 REACH ANYWHERE<br />
                 TO FIGHT FIRE
               </h1>

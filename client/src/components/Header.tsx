@@ -62,14 +62,14 @@ export const Header: React.FC<HeaderProps> = ({
 
       {/* Main Navigation Bar */}
       <div className="w-full bg-[#202528] text-white border-b border-[#2d3338]">
-        <Container className="h-[68px] flex items-center justify-between">
+        <Container className="h-[84px] flex items-center justify-between">
           {/* Brand Logo */}
           <div onClick={() => handleNavClick('home')} className="cursor-pointer">
             <SafemeteLogo />
           </div>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8 text-[12px] font-bold tracking-wider relative h-full">
+          <nav className="hidden lg:flex items-center space-x-8 xl:space-x-10 text-[14px] font-bold tracking-wider relative h-full">
             {navItems.map((item) => {
               const isDropdownItem = item.hasDropdown;
               const isDropdownActive = activeDropdown === item.id;
@@ -100,7 +100,7 @@ export const Header: React.FC<HeaderProps> = ({
                     {isDropdownActive && (
                       <div
                         id="products-dropdown-menu"
-                        className="absolute top-[68px] left-0 w-[270px] sm:w-[290px] bg-white text-[#202528] shadow-2xl z-50 border border-neutral-200/80 border-t-0 animate-fadeIn"
+                        className="absolute top-[84px] left-0 w-[270px] sm:w-[290px] bg-white text-[#202528] shadow-2xl z-50 border border-neutral-200/80 border-t-0 animate-fadeIn"
                       >
                         <div className="flex flex-col">
                           {CATEGORIES.map((cat, idx) => {
@@ -110,7 +110,7 @@ export const Header: React.FC<HeaderProps> = ({
                                 <button
                                   id={`dropdown-cat-${cat.slug}`}
                                   onClick={() => handleCategorySelect(cat)}
-                                  className={`w-full text-left px-5 py-3 text-[11px] sm:text-[12px] font-extrabold tracking-wider uppercase transition-colors cursor-pointer ${
+                                  className={`w-full text-left px-6 py-4 text-[13px] sm:text-[14px] font-extrabold tracking-wider uppercase transition-colors cursor-pointer ${
                                     isCurrentCat
                                       ? 'text-[#E5252B] bg-neutral-50'
                                       : 'text-[#1e2327] hover:bg-neutral-50 hover:text-[#E5252B]'
@@ -158,14 +158,14 @@ export const Header: React.FC<HeaderProps> = ({
                     {isDropdownActive && (
                       <div
                         id="media-dropdown-menu"
-                        className="absolute top-[68px] left-0 w-[220px] sm:w-[240px] bg-white text-[#202528] shadow-2xl z-50 border border-neutral-200/80 border-t-0 animate-fadeIn"
+                        className="absolute top-[84px] left-0 w-[220px] sm:w-[240px] bg-white text-[#202528] shadow-2xl z-50 border border-neutral-200/80 border-t-0 animate-fadeIn"
                       >
                         <div className="flex flex-col">
                           {MEDIA_CATEGORIES.map((cat, idx) => (
                             <div key={cat} className="flex flex-col">
                               <button
                                 onClick={() => handleNavClick('projects')}
-                                className="w-full text-left px-5 py-3 text-[11px] sm:text-[12px] font-extrabold tracking-wider uppercase text-[#1e2327] hover:bg-neutral-50 hover:text-[#E5252B] transition-colors cursor-pointer"
+                                className="w-full text-left px-6 py-4 text-[13px] sm:text-[14px] font-extrabold tracking-wider uppercase text-[#1e2327] hover:bg-neutral-50 hover:text-[#E5252B] transition-colors cursor-pointer"
                               >
                                 {cat}
                               </button>
@@ -208,16 +208,16 @@ export const Header: React.FC<HeaderProps> = ({
           <div className="hidden md:flex flex-col items-end text-right font-['Montserrat',sans-serif]">
             <a
               href="tel:+08007777777"
-              className="text-white font-bold text-sm tracking-wide hover:text-[#E5252B] transition-colors flex items-center gap-1.5"
+              className="text-white font-bold text-base tracking-wide hover:text-[#E5252B] transition-colors flex items-center gap-2"
             >
-              <Phone className="w-3.5 h-3.5 text-[#E5252B]" />
+              <Phone className="w-4 h-4 text-[#E5252B]" />
               <span>+0800-7777777</span>
             </a>
             <a
               href="mailto:mktg980@prangroup.com"
-              className="text-[#9ca3af] text-[11px] hover:text-white transition-colors flex items-center gap-1.5"
+              className="text-[#9ca3af] text-[13px] hover:text-white transition-colors flex items-center gap-2"
             >
-              <Mail className="w-3 h-3 text-neutral-400" />
+              <Mail className="w-4 h-4 text-neutral-400" />
               <span>mktg980@prangroup.com</span>
             </a>
           </div>
@@ -244,7 +244,7 @@ export const Header: React.FC<HeaderProps> = ({
                     <div className="flex items-center justify-between">
                       <button
                         onClick={() => handleNavClick(item.id)}
-                        className="flex-1 min-h-[44px] flex items-center text-left text-xs font-bold uppercase tracking-wider text-neutral-200 hover:text-[#E5252B] transition-colors"
+                        className="flex-1 min-h-[44px] flex items-center text-left text-sm font-bold uppercase tracking-wider text-neutral-200 hover:text-[#E5252B] transition-colors"
                       >
                         {item.label}
                       </button>
@@ -271,7 +271,7 @@ export const Header: React.FC<HeaderProps> = ({
                           <button
                             key={cat.slug}
                             onClick={() => handleCategorySelect(cat)}
-                            className={`min-h-[40px] flex items-center w-full text-left px-3 py-2 text-[11px] font-bold uppercase tracking-wider transition-colors rounded ${
+                            className={`min-h-[40px] flex items-center w-full text-left px-3 py-2 text-[13px] font-bold uppercase tracking-wider transition-colors rounded ${
                               activeCategory === cat.slug
                                 ? 'text-[#E5252B] bg-[#22272a]'
                                 : 'text-neutral-300 hover:text-white hover:bg-[#22272a]'
@@ -292,7 +292,7 @@ export const Header: React.FC<HeaderProps> = ({
                     <div className="flex items-center justify-between">
                       <button
                         onClick={() => handleNavClick(item.id)}
-                        className="flex-1 min-h-[44px] flex items-center text-left text-xs font-bold uppercase tracking-wider text-neutral-200 hover:text-[#E5252B] transition-colors"
+                        className="flex-1 min-h-[44px] flex items-center text-left text-sm font-bold uppercase tracking-wider text-neutral-200 hover:text-[#E5252B] transition-colors"
                       >
                         {item.label}
                       </button>
@@ -319,7 +319,7 @@ export const Header: React.FC<HeaderProps> = ({
                           <button
                             key={cat}
                             onClick={() => handleNavClick('projects')}
-                            className="min-h-[40px] flex items-center w-full text-left px-3 py-2 text-[11px] font-bold uppercase tracking-wider text-neutral-300 hover:text-white hover:bg-[#22272a] rounded transition-colors"
+                            className="min-h-[40px] flex items-center w-full text-left px-3 py-2 text-[13px] font-bold uppercase tracking-wider text-neutral-300 hover:text-white hover:bg-[#22272a] rounded transition-colors"
                           >
                             {cat}
                           </button>
@@ -346,14 +346,14 @@ export const Header: React.FC<HeaderProps> = ({
             <div className="pt-4 mt-2 border-t border-neutral-700/80 flex flex-col gap-2">
               <a
                 href="tel:+08007777777"
-                className="min-h-[44px] flex items-center justify-center gap-2 bg-[#252a2e] hover:bg-[#E5252B] text-white font-bold text-xs uppercase tracking-wider rounded-sm transition-colors"
+                className="min-h-[44px] flex items-center justify-center gap-2 bg-[#252a2e] hover:bg-[#E5252B] text-white font-bold text-sm uppercase tracking-wider rounded-sm transition-colors"
               >
                 <Phone className="w-4 h-4 text-[#E5252B] group-hover:text-white" />
                 <span>Call Us: +0800-7777777</span>
               </a>
               <a
                 href="mailto:mktg980@prangroup.com"
-                className="min-h-[44px] flex items-center justify-center gap-2 bg-[#252a2e] hover:bg-neutral-700 text-neutral-300 text-xs tracking-wide rounded-sm transition-colors"
+                className="min-h-[44px] flex items-center justify-center gap-2 bg-[#252a2e] hover:bg-neutral-700 text-neutral-300 text-sm tracking-wide rounded-sm transition-colors"
               >
                 <Mail className="w-4 h-4 text-neutral-400" />
                 <span>mktg980@prangroup.com</span>

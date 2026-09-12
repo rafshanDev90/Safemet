@@ -27,7 +27,7 @@ export const CategoryProductsPage: React.FC<CategoryProductsPageProps> = ({
     return (
       <div className="w-full bg-white font-['Montserrat',sans-serif]" id="category-not-found-page">
         {/* Hero Banner with standard PRODUCTS title */}
-        <section className="relative w-full h-[180px] sm:h-[220px] lg:h-[260px] bg-[#1a1f24] overflow-hidden flex items-center justify-center">
+        <section className="relative w-full h-[280px] sm:h-[350px] lg:h-[450px] bg-[#1a1f24] overflow-hidden flex items-center justify-center">
           <div className="absolute inset-0 bg-gradient-to-r from-[#121619] via-[#1a1f24] to-[#121619]" />
           <div className="relative z-10 text-center px-4">
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-widest uppercase">
@@ -38,8 +38,8 @@ export const CategoryProductsPage: React.FC<CategoryProductsPageProps> = ({
         </section>
 
         {/* Breadcrumb Path */}
-        <div className="w-full bg-[#f4f5f7] border-b border-neutral-200 py-3 px-4">
-          <div className="max-w-[1440px] mx-auto flex items-center justify-center text-[11px] sm:text-xs font-bold tracking-wider text-neutral-500 uppercase">
+        <div className="w-full bg-[#f4f5f7] border-b border-neutral-200 py-3.5 sm:py-4 px-4">
+          <div className="max-w-[1440px] mx-auto flex items-center justify-center text-[13px] sm:text-sm font-bold tracking-wider text-neutral-500 uppercase">
             <button
               onClick={onNavigateHome}
               className="hover:text-[#E5252B] transition-colors cursor-pointer"
@@ -52,11 +52,11 @@ export const CategoryProductsPage: React.FC<CategoryProductsPageProps> = ({
         </div>
 
         {/* Empty State / Not Found Notice */}
-        <div className="max-w-4xl mx-auto px-4 py-16 sm:py-24 text-center">
+        <div className="max-w-4xl mx-auto px-4 py-24 sm:py-32 text-center">
           <div className="w-16 h-16 bg-neutral-100 rounded-full flex items-center justify-center mx-auto mb-5 text-neutral-400">
-            <AlertCircle className="w-8 h-8" />
+            <AlertCircle className="w-10 h-10" />
           </div>
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#202528] uppercase tracking-wide">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#202528] uppercase tracking-wide">
             No Products Found
           </h2>
           <p className="text-neutral-500 text-sm sm:text-base mt-2 max-w-md mx-auto">
@@ -65,7 +65,7 @@ export const CategoryProductsPage: React.FC<CategoryProductsPageProps> = ({
 
           {/* Quick links to available categories */}
           <div className="mt-8">
-            <h3 className="text-xs font-bold tracking-widest text-neutral-400 uppercase mb-4">
+            <h3 className="text-[13px] sm:text-sm font-bold tracking-widest text-neutral-400 uppercase mb-4">
               Explore Our Product Categories
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 max-w-2xl mx-auto text-left">
@@ -73,12 +73,12 @@ export const CategoryProductsPage: React.FC<CategoryProductsPageProps> = ({
                 <button
                   key={cat.slug}
                   onClick={() => onSelectCategory(cat.slug)}
-                  className="p-4 border border-neutral-200 hover:border-[#E5252B] rounded bg-white hover:bg-neutral-50 transition-all group flex items-center justify-between text-left"
+                  className="p-5 border border-neutral-200 hover:border-[#E5252B] rounded bg-white hover:bg-neutral-50 transition-all group flex items-center justify-between text-left"
                 >
-                  <span className="text-xs font-bold text-[#202528] group-hover:text-[#E5252B] transition-colors uppercase">
+                  <span className="text-[13px] sm:text-sm font-bold text-[#202528] group-hover:text-[#E5252B] transition-colors uppercase">
                     {cat.name}
                   </span>
-                  <ArrowRight className="w-4 h-4 text-neutral-400 group-hover:text-[#E5252B] transition-colors shrink-0 ml-2" />
+                  <ArrowRight className="w-5 h-5 text-neutral-400 group-hover:text-[#E5252B] transition-colors shrink-0 ml-2" />
                 </button>
               ))}
             </div>
@@ -94,7 +94,7 @@ export const CategoryProductsPage: React.FC<CategoryProductsPageProps> = ({
   return (
     <div className="w-full bg-white font-['Montserrat',sans-serif]" id="category-products-page">
       {/* 1. HERO BANNER: Warm flame & hexagon pattern with PRODUCTS heading */}
-      <section className="relative w-full h-[180px] sm:h-[220px] lg:h-[260px] bg-[#1a1f24] overflow-hidden flex items-center justify-center">
+      <section className="relative w-full h-[280px] sm:h-[350px] lg:h-[450px] bg-[#1a1f24] overflow-hidden flex items-center justify-center">
         {/* Background Composite Layers: Left fiery amber glow, Right hexagon mechanical motif */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#1c0800] via-[#1c1c1f] to-[#0a1118]" />
 
@@ -126,10 +126,10 @@ export const CategoryProductsPage: React.FC<CategoryProductsPageProps> = ({
 
       {/* 2. BREADCRUMB NAVIGATION BAR: HOME → [Category Display Name] */}
       <div
-        className="w-full bg-[#f4f5f7] border-b border-neutral-200 py-3"
+        className="w-full bg-[#f4f5f7] border-b border-neutral-200 py-3.5 sm:py-4"
         id="category-breadcrumbs"
       >
-        <Container className="flex items-center justify-center text-[11px] sm:text-xs font-bold tracking-wider text-neutral-500 uppercase">
+        <Container className="flex items-center justify-center text-[13px] sm:text-sm font-bold tracking-wider text-neutral-500 uppercase">
           <button
             onClick={onNavigateHome}
             className="hover:text-[#E5252B] transition-colors cursor-pointer"
@@ -150,7 +150,7 @@ export const CategoryProductsPage: React.FC<CategoryProductsPageProps> = ({
               <button
                 key={cat.slug}
                 onClick={() => onSelectCategory(cat.slug)}
-                className={`px-3 py-1.5 rounded-sm text-[11px] font-bold tracking-wider uppercase transition-all duration-150 cursor-pointer ${
+                className={`px-4 py-2 rounded-sm text-[13px] font-bold tracking-wider uppercase transition-all duration-150 cursor-pointer ${
                   isActive
                     ? 'bg-[#E5252B] text-white shadow-sm'
                     : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200 hover:text-neutral-900'
@@ -164,7 +164,7 @@ export const CategoryProductsPage: React.FC<CategoryProductsPageProps> = ({
       </div>
 
       {/* 4. NUMBERED 3-COLUMN PRODUCT GRID */}
-      <main className="w-full py-12 sm:py-16 lg:py-20">
+      <main className="w-full py-16 sm:py-20 lg:py-24">
         <Container>
           {loading ? (
             <div className="py-20 text-center text-sm font-semibold text-neutral-400 uppercase tracking-wider">
