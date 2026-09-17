@@ -1,15 +1,23 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
+import { motion } from 'motion/react';
 import { ASSETS } from '../data';
 import { Container } from './Container';
 
 export const Hero: React.FC = () => {
+  const { t } = useTranslation();
   return (
     <section id="home" className="relative w-full overflow-hidden bg-neutral-900">
       {/* Background Image Container */}
-      <div className="relative w-full h-[360px] sm:h-[480px] md:h-[600px] lg:h-[761px]">
+      <motion.div
+        className="relative w-full h-[360px] sm:h-[480px] md:h-[600px] lg:h-[761px]"
+        initial={{ scale: 1.06 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 1.6, ease: [0.22, 1, 0.36, 1] }}
+      >
         <img
           src={ASSETS.heroCabinet}
-          alt="Fire Safety Hose Cabinet"
+          alt={t('hero.alt')}
           referrerPolicy="no-referrer"
           className="w-full h-full object-cover object-center"
         />
@@ -45,16 +53,22 @@ export const Hero: React.FC = () => {
         {/* Hero Content Container */}
         <div className="absolute inset-0 flex items-center">
           <Container className="flex flex-col justify-center">
-            <div className="max-w-xl md:max-w-2xl pl-1 sm:pl-4">
+            <motion.div
+              className="max-w-xl md:max-w-2xl pl-1 sm:pl-4"
+              initial={{ opacity: 0, y: 28 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+            >
               {/* Top Accent Line */}
               <div className="w-16 sm:w-20 h-[2.5px] bg-white mb-4 sm:mb-6 shadow-sm" />
 
               {/* Main Headline */}
               <h1 className="text-3xl sm:text-5xl lg:text-[64px] font-extrabold text-white uppercase tracking-wider leading-[1.15] drop-shadow-md font-['Montserrat',sans-serif]">
-                REACH ANYWHERE<br />
-                TO FIGHT FIRE
+                {t('hero.titleLine1')}
+                <br />
+                {t('hero.titleLine2')}
               </h1>
-            </div>
+            </motion.div>
           </Container>
         </div>
 
@@ -64,7 +78,7 @@ export const Hero: React.FC = () => {
           <span className="w-2 h-2 bg-white/50 rounded-full hover:bg-white cursor-pointer transition-all" />
           <span className="w-2 h-2 bg-white/50 rounded-full hover:bg-white cursor-pointer transition-all" />
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

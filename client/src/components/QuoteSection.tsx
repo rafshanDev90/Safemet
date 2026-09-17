@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ASSETS } from '../data';
 import { CheckCircle2 } from 'lucide-react';
 import { Container } from './Container';
+import { Reveal } from './Reveal';
 
 export const QuoteSection: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -36,17 +37,17 @@ export const QuoteSection: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/30" />
         <div className="absolute inset-0 bg-black/20" />
 
-        {/* Content Container */}
-        <div className="relative z-10 py-14 lg:py-20">
+{/* Content Container */}
+        <div className="relative z-10 py-20 lg:py-28">
           <Container>
-            <div className="max-w-xl">
-            {/* Header Line & Title */}
-            <div className="flex items-center gap-4 mb-10">
-              <div className="w-8 md:w-12 h-[2.5px] bg-white" />
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-wider uppercase font-['Montserrat',sans-serif]">
-                REQUEST A QUOTE
-              </h2>
-            </div>
+            <Reveal className="max-w-xl">
+              {/* Header Line & Title */}
+              <div className="flex items-center gap-4 mb-10">
+                <div className="w-8 md:w-12 h-[2.5px] bg-white" />
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-wider uppercase font-['Montserrat',sans-serif]">
+                  REQUEST A QUOTE
+                </h2>
+              </div>
 
             {/* Form */}
             {submitted ? (
@@ -106,14 +107,14 @@ export const QuoteSection: React.FC = () => {
                   <button
                     type="submit"
                     id="submit-quote-btn"
-                    className="bg-[#C22126] hover:bg-[#a51a1e] text-white font-extrabold text-sm tracking-widest uppercase px-12 py-4 sm:px-14 sm:py-5 transition-colors duration-200 cursor-pointer shadow-md rounded-none"
+                    className="bg-[#C22126] hover:bg-[#a51a1e] text-white font-extrabold text-sm tracking-widest uppercase px-12 py-4 sm:px-14 sm:py-5 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg cursor-pointer shadow-md rounded-none"
                   >
                     SUBMIT
                   </button>
                 </div>
               </form>
             )}
-          </div>
+          </Reveal>
           </Container>
         </div>
       </div>

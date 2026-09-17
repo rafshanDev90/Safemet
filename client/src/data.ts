@@ -74,13 +74,13 @@ export const TEAM_MEMBERS: TeamMember[] = [
     id: 'team-1',
     title: 'CHAIRMAN AND CEO',
     image: ceoImg,
-    description: 'Chairman and CEO of PRAN-RFL Group',
+    description: 'Chairman and CEO of RN GROUP Group',
   },
   {
     id: 'team-2',
     title: 'MANAGING DIRECTOR',
     image: mdImg,
-    description: 'Managing Director of PRAN-RFL Group',
+    description: 'Managing Director of RN GROUP Group',
   },
   {
     id: 'team-3',

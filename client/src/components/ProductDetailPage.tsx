@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { ASSETS } from '../data';
 import { ChevronRight, ChevronDown, ChevronUp, AlertCircle, ArrowLeft } from 'lucide-react';
 import { getCategoryBySlug, ProductItem } from '../productsData';
@@ -18,6 +19,7 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
   onNavigateCategory,
   onSelectProduct,
 }) => {
+  const { t } = useTranslation();
   const [accordionOpen, setAccordionOpen] = useState(true);
   const { products, getBySlug, getByCategory, loading } = useProducts();
 
@@ -35,12 +37,12 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
   // Show a loading state while the catalog is being fetched
   if (loading && !product) {
     return (
-      <div className="w-full bg-white font-['Montserrat',sans-serif]">
+      <div className="w-full bg-white dark:bg-[var(--bg-primary)] font-['Montserrat',sans-serif]">
         <section className="relative w-full h-[280px] sm:h-[350px] lg:h-[450px] bg-[#1a1e21] overflow-hidden flex items-center justify-center">
-          <h1 className="text-3xl font-extrabold text-white uppercase tracking-wider">PRODUCT</h1>
+          <h1 className="text-3xl font-extrabold text-white uppercase tracking-wider">{t('productDetail.title')}</h1>
         </section>
-        <div className="max-w-2xl mx-auto px-4 py-16 text-center text-sm font-semibold text-neutral-400 uppercase tracking-wider">
-          Loading product details...
+        <div className="max-w-2xl mx-auto px-4 py-16 text-center text-sm font-semibold text-neutral-400 dark:text-[var(--text-dim)] uppercase tracking-wider">
+          {t('productDetail.loadingTitle')}
         </div>
       </div>
     );
@@ -49,19 +51,19 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
   // Fallback if product truly doesn't exist
   if (!product) {
     return (
-      <div className="w-full bg-white font-['Montserrat',sans-serif]" id="product-not-found">
+      <div className="w-full bg-white dark:bg-[var(--bg-primary)] font-['Montserrat',sans-serif]" id="product-not-found">
         <section className="relative w-full h-[280px] sm:h-[350px] lg:h-[450px] bg-[#1a1e21] overflow-hidden flex items-center justify-center">
-          <h1 className="text-3xl font-extrabold text-white uppercase tracking-wider">PRODUCT</h1>
+          <h1 className="text-3xl font-extrabold text-white uppercase tracking-wider">{t('productDetail.title')}</h1>
         </section>
         <div className="max-w-2xl mx-auto px-4 py-16 text-center">
-          <AlertCircle className="w-12 h-12 text-neutral-400 mx-auto mb-4" />
-          <h2 className="text-2xl font-bold text-[#1a1e21] uppercase mb-2">Product Not Found</h2>
-          <p className="text-neutral-500 text-sm mb-6">The requested product could not be located in our catalog.</p>
+          <AlertCircle className="w-12 h-12 text-neutral-400 dark:text-[var(--text-dim)] mx-auto mb-4" />
+          <h2 className="text-2xl font-bold text-[#1a1e21] dark:text-[var(--text-strong)] uppercase mb-2">{t('productDetail.notFoundTitle')}</h2>
+          <p className="text-neutral-500 dark:text-[var(--text-muted)] text-sm mb-6">{t('productDetail.notFoundBody')}</p>
           <button
             onClick={() => onNavigateCategory && onNavigateCategory('fire-protection-system')}
             className="px-6 py-3 bg-[#E5252B] text-white text-sm font-bold uppercase tracking-wider rounded hover:bg-[#c81e1e] transition-colors"
           >
-            Back to Products
+            {t('productDetail.backToProducts')}
           </button>
         </div>
       </div>
@@ -79,14 +81,14 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
       );
     }
     return (
-      <div className="w-64 h-64 bg-neutral-100 rounded flex items-center justify-center text-neutral-400">
+      <div className="w-64 h-64 bg-neutral-100 dark:bg-[var(--bg-hover)] rounded flex items-center justify-center text-neutral-400 dark:text-[var(--text-dim)]">
         <span className="text-sm font-bold uppercase tracking-wider">{item.name}</span>
       </div>
     );
   };
 
   return (
-    <div className="w-full bg-white font-['Montserrat',sans-serif]" id="product-detail-page">
+    <div className="w-full bg-white dark:bg-[var(--bg-primary)] font-['Montserrat',sans-serif]" id="product-detail-page">
       {/* 1. HERO BREADCRUMB BANNER (Night City Skyline) */}
       <section
         className="relative w-full h-[320px] sm:h-[400px] lg:h-[500px] flex flex-col items-center justify-center bg-cover bg-center overflow-hidden"
@@ -101,7 +103,7 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
 
         <div className="relative z-10 text-center px-4">
           <h1 className="text-4xl sm:text-5xl lg:text-[56px] font-black tracking-widest text-white uppercase drop-shadow-md">
-            PRODUCT
+            {t('productDetail.title')}
           </h1>
           {/* Thin horizontal underline below PRODUCT */}
           <div className="w-20 h-[2px] bg-white/90 mx-auto mt-4" />
@@ -109,23 +111,23 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
       </section>
 
       {/* 2. BREADCRUMB BAR */}
-      <div className="w-full bg-[#f2f2f2] border-b border-neutral-200 py-3.5 sm:py-4">
-        <Container className="flex flex-wrap items-center justify-center text-[13px] sm:text-sm font-semibold text-neutral-600 tracking-wider uppercase text-center gap-y-1">
+      <div className="w-full bg-[#f2f2f2] dark:bg-[var(--bg-quaternary)] border-b border-neutral-200 dark:border-[var(--border-default)] py-3.5 sm:py-4">
+        <Container className="flex flex-wrap items-center justify-center text-[13px] sm:text-sm font-semibold text-neutral-600 dark:text-[var(--text-muted)] tracking-wider uppercase text-center gap-y-1">
           <button
             onClick={onNavigateHome}
             className="hover:text-[#E5252B] transition-colors cursor-pointer"
           >
-            HOME
+            {t('productDetail.breadcrumb')}
           </button>
-          <span className="mx-2 text-neutral-400 font-normal">→</span>
+          <span className="mx-2 text-neutral-400 dark:text-[var(--text-dim)] font-normal">→</span>
           <button
             onClick={() => onNavigateCategory && onNavigateCategory(product.category)}
             className="hover:text-[#E5252B] transition-colors cursor-pointer"
           >
-            {categoryInfo?.displayName || 'PRODUCTS'}
+            {categoryInfo ? t(`categories.${categoryInfo.slug}.displayName`) : t('productDetail.title')}
           </button>
-          <span className="mx-2 text-neutral-400 font-normal">→</span>
-          <span className="text-[#1a1a1a] font-bold">
+          <span className="mx-2 text-neutral-400 dark:text-[var(--text-dim)] font-normal">→</span>
+          <span className="text-[#1a1a1a] dark:text-[var(--text-title)] font-bold">
             {product.name.toUpperCase()}
           </span>
         </Container>
@@ -137,37 +139,37 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
           {/* Two-Column Product Overview */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-start">
             {/* Left Column: Product Image on White Background */}
-            <div className="lg:col-span-5 flex items-center justify-center p-4 sm:p-6 lg:p-8 bg-white min-h-[320px] sm:min-h-[420px] lg:min-h-[520px]">
+            <div className="lg:col-span-5 flex items-center justify-center p-4 sm:p-6 lg:p-8 bg-white dark:bg-[var(--bg-card)] min-h-[320px] sm:min-h-[420px] lg:min-h-[520px]">
               {renderProductGraphic(product)}
             </div>
 
             {/* Right Column: Title, Category, Specification List */}
             <div className="lg:col-span-7 flex flex-col justify-start pt-1 sm:pt-4">
               {/* Product Title */}
-              <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-extrabold text-[#1a1e21] tracking-tight mb-2">
+              <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-extrabold text-[#1a1e21] dark:text-[var(--text-strong)] tracking-tight mb-2">
                 {product.name}
               </h2>
 
               {/* Category */}
-              <div className="text-sm sm:text-[15px] text-neutral-600 mb-8 font-medium">
-                <span className="font-normal text-neutral-700">Category: </span>
+              <div className="text-sm sm:text-[15px] text-neutral-600 dark:text-[var(--text-muted)] mb-8 font-medium">
+                <span className="font-normal text-neutral-700 dark:text-[var(--text-muted)]">{t('productDetail.categoryLabel')}</span>
                 <button
                   onClick={() => onNavigateCategory && onNavigateCategory(product.category)}
-                  className="uppercase text-[#202528] font-bold hover:text-[#E5252B] transition-colors cursor-pointer"
+                  className="uppercase text-[#202528] dark:text-[var(--text-slate)] font-bold hover:text-[#E5252B] transition-colors cursor-pointer"
                 >
-                  {categoryInfo?.name || product.category.replace(/-/g, ' ')}
+                  {categoryInfo ? t(`categories.${categoryInfo.slug}.name`) : product.category.replace(/-/g, ' ')}
                 </button>
               </div>
 
               {/* Specifications Key-Value List */}
               {product.specs && product.specs.length > 0 && (
-                <div className="space-y-1.5 text-[15px] sm:text-base text-[#2c3236]">
+                <div className="space-y-1.5 text-[15px] sm:text-base text-[#2c3236] dark:text-[var(--text-faint)]">
                   {product.specs.map((spec) => (
                     <div key={spec.label} className="leading-relaxed">
-                      <span className="font-semibold text-[#1e2327]">
+                      <span className="font-semibold text-[#1e2327] dark:text-[var(--text-title)]">
                         {spec.label}:{' '}
                       </span>
-                      <span className="text-neutral-700 font-normal">
+                      <span className="text-neutral-700 dark:text-[var(--text-muted)] font-normal">
                         {spec.value}
                       </span>
                     </div>
@@ -183,23 +185,23 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
             {/* Bordered Accordion Header Box */}
             <button
               onClick={() => setAccordionOpen(!accordionOpen)}
-              className="w-full text-left border border-neutral-300/80 bg-white px-6 py-4 flex items-center justify-between cursor-pointer hover:bg-neutral-50/70 transition-colors"
+              className="w-full text-left border border-neutral-300/80 dark:border-[var(--border-default)] bg-white dark:bg-[var(--bg-card)] px-6 py-4 flex items-center justify-between cursor-pointer hover:bg-neutral-50/70 dark:hover:bg-[var(--bg-hover)] transition-colors"
             >
               <span className="text-[14px] sm:text-[15px] font-extrabold tracking-wider uppercase text-[#E5252B]">
-                ADDITIONAL INFORMATION
+                {t('productDetail.additionalInfo')}
               </span>
-              <span className="text-neutral-400">
+              <span className="text-neutral-400 dark:text-[var(--text-dim)]">
                 {accordionOpen ? (
-                  <ChevronUp className="w-4 h-4 text-neutral-500" />
+                  <ChevronUp className="w-4 h-4 text-neutral-500 dark:text-[var(--text-dim)]" />
                 ) : (
-                  <ChevronDown className="w-4 h-4 text-neutral-500" />
+                  <ChevronDown className="w-4 h-4 text-neutral-500 dark:text-[var(--text-dim)]" />
                 )}
               </span>
             </button>
 
             {/* Accordion Content */}
             {accordionOpen && (
-              <div className="pt-5 pb-2 px-1 text-[15px] sm:text-base leading-relaxed text-[#444a50]">
+              <div className="pt-5 pb-2 px-1 text-[15px] sm:text-base leading-relaxed text-[#444a50] dark:text-[var(--text-dim)]">
                 <p>{product.description}</p>
               </div>
             )}
@@ -208,9 +210,9 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
 
         {/* 5. RELATED PRODUCTS SECTION */}
         {relatedProducts.length > 0 && (
-          <div className="mt-24 pt-10 border-t border-neutral-200/70">
-            <h3 className="text-center text-2xl sm:text-3xl font-black uppercase text-[#1a1e21] tracking-wider mb-12">
-              RELATED PRODUCTS
+          <div className="mt-24 pt-10 border-t border-neutral-200/70 dark:border-[var(--border-soft)]">
+            <h3 className="text-center text-2xl sm:text-3xl font-black uppercase text-[#1a1e21] dark:text-[var(--text-strong)] tracking-wider mb-12">
+              {t('productDetail.relatedProducts')}
             </h3>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 max-w-[1080px] mx-auto">
@@ -221,7 +223,7 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
                   className="group flex flex-col items-center cursor-pointer"
                 >
                   {/* Product Card Image Container */}
-                  <div className="w-full h-[320px] sm:h-[360px] flex items-center justify-center p-6 bg-white transition-all duration-300">
+                  <div className="w-full h-[320px] sm:h-[360px] flex items-center justify-center p-6 bg-white dark:bg-[var(--bg-card)] transition-all duration-300">
                     <img
                       src={prod.image || ASSETS.electricPump}
                       alt={prod.name}
@@ -230,7 +232,7 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
                   </div>
 
                   {/* Product Title */}
-                  <h4 className="mt-4 text-center text-base sm:text-lg font-bold text-[#1f2428] group-hover:text-[#E5252B] transition-colors">
+                  <h4 className="mt-4 text-center text-base sm:text-lg font-bold text-[#1f2428] dark:text-[var(--text-navy)] group-hover:text-[#E5252B] transition-colors">
                     {prod.name}
                   </h4>
                 </div>

@@ -156,19 +156,19 @@ export const ProductCard: React.FC<ProductCardProps> = ({
       className="group flex flex-col cursor-pointer transition-all duration-200"
     >
       {/* Product Image on Pure White Background */}
-      <div className="w-full h-[300px] sm:h-[340px] lg:h-[380px] flex items-center justify-center p-4 bg-white transition-all duration-300">
+      <div className="w-full h-[300px] sm:h-[340px] lg:h-[380px] flex items-center justify-center p-4 bg-white dark:bg-[var(--bg-card)] transition-all duration-300">
         {renderGraphic()}
       </div>
 
       {/* Number and Product Title Row */}
       <div className="mt-5 flex items-center">
         {/* Large Light-Gray Bold Number (e.g., 01, 02...) */}
-        <span className="text-5xl sm:text-[54px] lg:text-[62px] font-black text-neutral-200 group-hover:text-neutral-300 transition-colors tracking-tighter mr-4 sm:mr-5 shrink-0 leading-none select-none">
+        <span className="text-5xl sm:text-[54px] lg:text-[62px] font-black text-neutral-200 dark:text-[var(--bg-hover)] group-hover:text-neutral-300 dark:group-hover:text-[#3a414a] transition-colors tracking-tighter mr-4 sm:mr-5 shrink-0 leading-none select-none">
           {displayNumber}
         </span>
 
         {/* Product Name in Bold */}
-        <h3 className="text-[15px] sm:text-base font-bold text-[#1f2428] group-hover:text-[#E5252B] transition-colors uppercase leading-snug">
+        <h3 className="text-[15px] sm:text-base font-bold text-[#1f2428] dark:text-[var(--text-navy)] group-hover:text-[#E5252B] transition-colors uppercase leading-snug">
           {product.name}
         </h3>
       </div>

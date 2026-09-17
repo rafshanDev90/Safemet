@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { ASSETS } from '../data';
 import { Mail, MapPin, Phone, Globe, CheckCircle2 } from 'lucide-react';
 import { Container } from './Container';
@@ -35,6 +36,7 @@ const OFFICES = [
 ];
 
 export const ContactPage: React.FC<ContactPageProps> = ({ onNavigateHome }) => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -53,13 +55,13 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigateHome }) => {
   };
 
   return (
-    <div className="w-full bg-white flex flex-col font-['Montserrat',sans-serif]">
+    <div className="w-full bg-white dark:bg-[var(--bg-primary)] flex flex-col font-['Montserrat',sans-serif]">
       {/* 1. HERO BANNER WITH COMPOSITE ASSET & HEXAGON ACCENTS */}
       <section className="relative w-full h-[320px] sm:h-[400px] md:h-[470px] lg:h-[540px] bg-[#1a1e21] overflow-hidden flex items-center justify-center">
         {/* Background Composite Image */}
         <img
           src={ASSETS.aboutBanner}
-          alt="Contact Safemet Fire Safety Equipment & Solution"
+          alt={t('contact.bannerAlt')}
           referrerPolicy="no-referrer"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
@@ -88,48 +90,48 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigateHome }) => {
         {/* Centered Headline */}
         <div className="relative z-10 text-center px-4">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-widest uppercase">
-            CONTACT US
+            {t('contact.title')}
           </h1>
           <div className="w-16 sm:w-20 h-[3px] bg-white mx-auto mt-3 sm:mt-4 shadow-sm" />
         </div>
       </section>
 
       {/* 2. BREADCRUMB NAVIGATION */}
-      <section className="w-full bg-[#f8f9fa] border-b border-neutral-200 py-3.5 sm:py-4">
+      <section className="w-full bg-[#f8f9fa] dark:bg-[var(--bg-tertiary)] border-b border-neutral-200 dark:border-[var(--border-default)] py-3.5 sm:py-4">
         <Container className="flex items-center justify-center">
           <nav className="flex items-center space-x-2 text-[13px] sm:text-sm font-bold uppercase tracking-wider">
             <button
               onClick={onNavigateHome}
-              className="text-neutral-500 hover:text-[#E5252B] transition-colors cursor-pointer"
+              className="text-neutral-500 dark:text-[var(--text-dim)] hover:text-[#E5252B] transition-colors cursor-pointer"
             >
-              HOME
+              {t('contact.breadcrumb')}
             </button>
-            <span className="text-neutral-900 font-black">
+            <span className="text-neutral-900 dark:text-[var(--text-title)] font-black">
               &rarr;
             </span>
-            <span className="text-neutral-900 font-extrabold">
-              CONTACT US
+            <span className="text-neutral-900 dark:text-[var(--text-title)] font-extrabold">
+              {t('contact.title')}
             </span>
           </nav>
         </Container>
       </section>
 
       {/* 3. MAIN CONTACT CONTENT: FORM + SIDEBAR */}
-      <section className="w-full bg-white py-16 sm:py-20 md:py-28">
+      <section className="w-full bg-white dark:bg-[var(--bg-primary)] py-16 sm:py-20 md:py-28">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             {/* Left Column: Form (8 cols) */}
             <div className="lg:col-span-8 flex flex-col">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#111827] tracking-tight mb-8">
-                Get in Touch
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#111827] dark:text-[var(--text-ink)] tracking-tight mb-8">
+                {t('contact.getInTouch')}
               </h2>
 
               {submitted ? (
-                <div className="bg-emerald-50 border border-emerald-300 p-8 text-center flex flex-col items-center justify-center animate-fadeIn shadow-sm">
+                <div className="bg-emerald-50 dark:bg-[#10311f] border border-emerald-300 dark:border-emerald-700 p-8 text-center flex flex-col items-center justify-center animate-fadeIn shadow-sm">
                   <CheckCircle2 className="w-14 h-14 text-emerald-500 mb-3" />
-                  <h4 className="text-xl font-extrabold text-neutral-900 mb-2">Thank you! Message Sent.</h4>
-                  <p className="text-sm sm:text-base text-neutral-600">
-                    Our safety support engineers have received your inquiry and will reach out to you shortly.
+                  <h4 className="text-xl font-extrabold text-neutral-900 dark:text-[var(--text-title)] mb-2">{t('contact.thanksTitle')}</h4>
+                  <p className="text-sm sm:text-base text-neutral-600 dark:text-[var(--text-muted)]">
+                    {t('contact.thanksBody')}
                   </p>
                 </div>
               ) : (
@@ -140,21 +142,21 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigateHome }) => {
                       <input
                         type="text"
                         required
-                        placeholder="Your Name*"
+                        placeholder={t('contact.name')}
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full bg-white text-neutral-800 placeholder:text-neutral-500 px-5 py-4 text-sm sm:text-base border border-neutral-300 focus:outline-none focus:border-[#E5252B] focus:ring-1 focus:ring-[#E5252B] transition-all"
-                      />
-                    </div>
-                    <div>
-                      <input
-                        type="email"
-                        required
-                        placeholder="Your E-mail*"
-                        value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full bg-white text-neutral-800 placeholder:text-neutral-500 px-5 py-4 text-sm sm:text-base border border-neutral-300 focus:outline-none focus:border-[#E5252B] focus:ring-1 focus:ring-[#E5252B] transition-all"
-                      />
+className="w-full bg-white dark:bg-[var(--bg-input)] text-neutral-800 dark:text-[var(--text-body)] placeholder:text-neutral-500 dark:placeholder:text-[var(--text-dim)] px-5 py-4 text-sm sm:text-base border border-neutral-300 dark:border-[var(--border-default)] focus:outline-none focus:border-[#E5252B] focus:ring-1 focus:ring-[#E5252B] transition-all"
+                        />
+                      </div>
+                      <div>
+                        <input
+                          type="email"
+                          required
+                          placeholder={t('contact.email')}
+                          value={formData.email}
+                          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                          className="w-full bg-white dark:bg-[var(--bg-input)] text-neutral-800 dark:text-[var(--text-body)] placeholder:text-neutral-500 dark:placeholder:text-[var(--text-dim)] px-5 py-4 text-sm sm:text-base border border-neutral-300 dark:border-[var(--border-default)] focus:outline-none focus:border-[#E5252B] focus:ring-1 focus:ring-[#E5252B] transition-all"
+                        />
                     </div>
                   </div>
 
@@ -163,10 +165,10 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigateHome }) => {
                     <input
                       type="tel"
                       required
-                      placeholder="Your Phone*"
+                      placeholder={t('contact.phone')}
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full bg-white text-neutral-800 placeholder:text-neutral-500 px-5 py-4 text-sm sm:text-base border border-neutral-300 focus:outline-none focus:border-[#E5252B] focus:ring-1 focus:ring-[#E5252B] transition-all"
+                      className="w-full bg-white dark:bg-[var(--bg-input)] text-neutral-800 dark:text-[var(--text-body)] placeholder:text-neutral-500 dark:placeholder:text-[var(--text-dim)] px-5 py-4 text-sm sm:text-base border border-neutral-300 dark:border-[var(--border-default)] focus:outline-none focus:border-[#E5252B] focus:ring-1 focus:ring-[#E5252B] transition-all"
                     />
                   </div>
 
@@ -174,10 +176,10 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigateHome }) => {
                   <div>
                     <textarea
                       rows={6}
-                      placeholder="Message"
+                      placeholder={t('contact.message')}
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="w-full bg-white text-neutral-800 placeholder:text-neutral-500 px-4 py-3.5 text-xs sm:text-sm border border-neutral-300 focus:outline-none focus:border-[#E5252B] focus:ring-1 focus:ring-[#E5252B] transition-all resize-none"
+                      className="w-full bg-white dark:bg-[var(--bg-input)] text-neutral-800 dark:text-[var(--text-body)] placeholder:text-neutral-500 dark:placeholder:text-[var(--text-dim)] px-4 py-3.5 text-xs sm:text-sm border border-neutral-300 dark:border-[var(--border-default)] focus:outline-none focus:border-[#E5252B] focus:ring-1 focus:ring-[#E5252B] transition-all resize-none"
                     />
                   </div>
 
@@ -188,7 +190,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigateHome }) => {
                       id="contact-form-submit-btn"
                       className="bg-[#C22126] hover:bg-[#a51a1e] text-white font-extrabold text-sm tracking-widest uppercase px-12 py-4 sm:px-14 sm:py-5 transition-colors duration-200 cursor-pointer shadow-sm"
                     >
-                      CONTACT US
+                      {t('contact.submit')}
                     </button>
                   </div>
                 </form>
@@ -198,11 +200,11 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigateHome }) => {
             {/* Right Column: Contact Info Sidebar (4 cols) */}
             <div className="lg:col-span-4 flex flex-col space-y-8 lg:pl-6">
               {/* GET SOCIAL */}
-              <div className="space-y-3 pb-6 border-b border-neutral-200">
-                <h3 className="text-[13px] font-extrabold uppercase tracking-wider text-neutral-900">
-                  GET SOCIAL
+              <div className="space-y-3 pb-6 border-b border-neutral-200 dark:border-[var(--border-default)]">
+                <h3 className="text-[13px] font-extrabold uppercase tracking-wider text-neutral-900 dark:text-[var(--text-title)]">
+                  {t('contact.getSocial')}
                 </h3>
-                <div className="flex items-center space-x-3 text-neutral-800">
+                <div className="flex items-center space-x-3 text-neutral-800 dark:text-[var(--text-title)]">
                   <a
                     href="https://facebook.com"
                     target="_blank"
@@ -225,15 +227,15 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigateHome }) => {
               </div>
 
               {/* HOTLINE */}
-              <div className="space-y-2 pb-6 border-b border-neutral-200">
-                <h3 className="text-[13px] font-extrabold uppercase tracking-wider text-neutral-900">
-                  HOTLINE
+              <div className="space-y-2 pb-6 border-b border-neutral-200 dark:border-[var(--border-default)]">
+                <h3 className="text-[13px] font-extrabold uppercase tracking-wider text-neutral-900 dark:text-[var(--text-title)]">
+                  {t('contact.hotline')}
                 </h3>
                 <div className="flex items-center gap-2.5 text-[#C22126]">
                   <Phone className="w-5 h-5 text-[#C22126] stroke-[2.5]" />
                   <a
                     href="tel:+8801742264946"
-                    className="text-sm sm:text-[15px] font-bold text-neutral-800 hover:text-[#E5252B] transition-colors"
+                    className="text-sm sm:text-[15px] font-bold text-neutral-800 hover:text-[#E5252B] transition-colors dark:text-[var(--text-title)]"
                   >
                     +8801742-264946
                   </a>
@@ -241,15 +243,15 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigateHome }) => {
               </div>
 
               {/* LANDLINE */}
-              <div className="space-y-2 pb-6 border-b border-neutral-200">
-                <h3 className="text-[13px] font-extrabold uppercase tracking-wider text-neutral-900">
-                  LANDLINE
+              <div className="space-y-2 pb-6 border-b border-neutral-200 dark:border-[var(--border-default)]">
+                <h3 className="text-[13px] font-extrabold uppercase tracking-wider text-neutral-900 dark:text-[var(--text-title)]">
+                  {t('contact.landline')}
                 </h3>
                 <div className="flex items-center gap-2.5 text-[#C22126]">
                   <Phone className="w-5 h-5 text-[#C22126] stroke-[2.5]" />
                   <a
                     href="tel:+8802588814123"
-                    className="text-sm sm:text-[15px] font-bold text-neutral-800 hover:text-[#E5252B] transition-colors"
+                    className="text-sm sm:text-[15px] font-bold text-neutral-800 hover:text-[#E5252B] transition-colors dark:text-[var(--text-title)]"
                   >
                     +8802588814123
                   </a>
@@ -257,48 +259,48 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigateHome }) => {
               </div>
 
               {/* E-MAIL */}
-              <div className="space-y-2 pb-6 border-b border-neutral-200">
-                <h3 className="text-[13px] font-extrabold uppercase tracking-wider text-neutral-900">
-                  E-MAIL
+              <div className="space-y-2 pb-6 border-b border-neutral-200 dark:border-[var(--border-default)]">
+                <h3 className="text-[13px] font-extrabold uppercase tracking-wider text-neutral-900 dark:text-[var(--text-title)]">
+                  {t('contact.emailLabel')}
                 </h3>
                 <div className="flex items-center gap-2.5">
                   <Mail className="w-5 h-5 text-[#C22126] stroke-[2]" />
                   <a
-                    href="mailto:inforngroupbd@gmail.com"
-                    className="text-sm sm:text-[15px] font-medium text-neutral-700 hover:text-[#E5252B] transition-colors"
+                    href="mailto:infosafemetebd@gmail.com"
+                    className="text-sm sm:text-[15px] font-medium text-neutral-700 hover:text-[#E5252B] transition-colors dark:text-[var(--text-muted)]"
                   >
-                    inforngroupbd@gmail.com
+                    infosafemetebd@gmail.com
                   </a>
                 </div>
               </div>
 
               {/* WEBSITE */}
-              <div className="space-y-2 pb-6 border-b border-neutral-200">
-                <h3 className="text-[13px] font-extrabold uppercase tracking-wider text-neutral-900">
-                  WEBSITE
+              <div className="space-y-2 pb-6 border-b border-neutral-200 dark:border-[var(--border-default)]">
+                <h3 className="text-[13px] font-extrabold uppercase tracking-wider text-neutral-900 dark:text-[var(--text-title)]">
+                  {t('contact.website')}
                 </h3>
                 <div className="flex items-center gap-2.5">
                   <Globe className="w-5 h-5 text-[#C22126] stroke-[2]" />
                   <a
-                    href="https://www.rngroupinfo.com"
+                    href="https://www.safemeteinfo.com"
                     target="_blank"
                     rel="noreferrer"
-                    className="text-sm sm:text-[15px] font-medium text-neutral-700 hover:text-[#E5252B] transition-colors"
+                    className="text-sm sm:text-[15px] font-medium text-neutral-700 hover:text-[#E5252B] transition-colors dark:text-[var(--text-muted)]"
                   >
-                    www.rngroupinfo.com
+                    www.safemeteinfo.com
                   </a>
                 </div>
               </div>
 
               {/* ADDRESS */}
               <div className="space-y-2">
-                <h3 className="text-[13px] font-extrabold uppercase tracking-wider text-neutral-900">
-                  ADDRESS
+                <h3 className="text-[13px] font-extrabold uppercase tracking-wider text-neutral-900 dark:text-[var(--text-title)]">
+                  {t('contact.address')}
                 </h3>
-                <div className="flex items-start gap-2.5 text-neutral-700">
+                <div className="flex items-start gap-2.5 text-neutral-700 dark:text-[var(--text-muted)]">
                   <MapPin className="w-5 h-5 text-[#C22126] stroke-[2] flex-shrink-0 mt-0.5" />
                   <span className="text-sm sm:text-[15px] font-medium leading-relaxed">
-                    Holding no 9/2, 4th Floor, Avenue 5, Block B, Section 6, Mirpur, Dhaka-1216.
+                    {t('contact.addressValue')}
                   </span>
                 </div>
               </div>
@@ -307,14 +309,42 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigateHome }) => {
         </Container>
       </section>
 
-      {/* 4. OUR OFFICES */}
-      <section className="w-full bg-[#f4f5f6] py-16 sm:py-20 md:py-28 border-t border-neutral-200">
+      {/* 4. OUR LOCATION / GOOGLE MAP */}
+      <section className="w-full bg-white dark:bg-[var(--bg-primary)] py-16 sm:py-20 md:py-28">
         <Container>
           {/* Section Header */}
-          <div className="flex items-center gap-4 pb-8 mb-12 border-b border-neutral-300">
-            <div className="w-8 md:w-12 h-[2.5px] bg-[#222629]" />
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#1f2427] tracking-wider uppercase font-['Montserrat',sans-serif]">
-              OUR OFFICES
+          <div className="flex items-center gap-4 pb-8 mb-12 border-b border-neutral-300 dark:border-[var(--border-strong)]">
+            <div className="w-8 md:w-12 h-[2.5px] bg-[#222629] dark:bg-[var(--text-muted)]" />
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#1f2427] dark:text-[var(--text-heading)] tracking-wider uppercase font-['Montserrat',sans-serif]">
+              {t('contact.locationTitle')}
+            </h2>
+          </div>
+
+          {/* Google Maps Embed — Head Office (Mirpur, Dhaka) */}
+          <div className="rounded-sm overflow-hidden border border-neutral-200 dark:border-[var(--border-default)] shadow-md">
+            <iframe
+              src="https://www.google.com/maps?q=Holding%20no%209%2F2%2C%204th%20Floor%2C%20Avenue%205%2C%20Block%20B%2C%20Section%206%2C%20Mirpur%2C%20Dhaka-1216&output=embed"
+              width="100%"
+              height="450"
+              style={{ border: 0 }}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+              title={t('contact.mapTitle')}
+              className="block w-full h-[300px] sm:h-[400px] lg:h-[450px]"
+            />
+          </div>
+        </Container>
+      </section>
+
+      {/* 5. OUR OFFICES */}
+      <section className="w-full bg-[#f4f5f6] dark:bg-[var(--bg-secondary)] py-16 sm:py-20 md:py-28 border-t border-neutral-200 dark:border-[var(--border-default)]">
+        <Container>
+          {/* Section Header */}
+          <div className="flex items-center gap-4 pb-8 mb-12 border-b border-neutral-300 dark:border-[var(--border-strong)]">
+            <div className="w-8 md:w-12 h-[2.5px] bg-[#222629] dark:bg-[var(--text-muted)]" />
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#1f2427] dark:text-[var(--text-heading)] tracking-wider uppercase font-['Montserrat',sans-serif]">
+              {t('contact.officesTitle')}
             </h2>
           </div>
 
@@ -324,30 +354,30 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigateHome }) => {
               <div
                 key={office.id}
                 id={`office-card-${office.id}`}
-                className="bg-white border border-neutral-200 p-7 sm:p-8 flex flex-col space-y-4 shadow-sm group"
+                className="bg-white dark:bg-[var(--bg-card)] border border-neutral-200 dark:border-[var(--border-default)] p-7 sm:p-8 flex flex-col space-y-4 shadow-sm group"
               >
                 {/* Icon in Circular Badge */}
-                <div className="w-14 h-14 rounded-full bg-[#fde8e9] border border-[#f8b4b7] flex items-center justify-center group-hover:bg-[#E5252B] group-hover:border-[#E5252B] transition-all duration-300">
+                <div className="w-14 h-14 rounded-full bg-[#fde8e9] dark:bg-[var(--bg-badge)] border border-[#f8b4b7] dark:border-[var(--bg-badge-border)] flex items-center justify-center group-hover:bg-[#E5252B] group-hover:border-[#E5252B] transition-all duration-300">
                   <MapPin className="w-6 h-6 text-[#E5252B] group-hover:text-white transition-colors duration-300" />
                 </div>
 
                 {/* Office Title */}
-                <h3 className="text-sm sm:text-[15px] font-extrabold uppercase tracking-wider text-[#1e2327] font-['Montserrat',sans-serif]">
-                  {office.title}
+                <h3 className="text-sm sm:text-[15px] font-extrabold uppercase tracking-wider text-[#1e2327] dark:text-[var(--text-title)] font-['Montserrat',sans-serif]">
+                  {t(`contact.offices.${office.id}`)}
                 </h3>
 
                 {/* Office Address */}
-                <p className="text-sm text-neutral-600 leading-relaxed">
+                <p className="text-sm text-neutral-600 dark:text-[var(--text-muted)] leading-relaxed">
                   {office.address}
                 </p>
 
                 {/* Office Contact */}
                 {office.contact && (
-                  <div className="flex items-center gap-2 pt-3 border-t border-neutral-200 mt-auto">
+                  <div className="flex items-center gap-2 pt-3 border-t border-neutral-200 dark:border-[var(--border-default)] mt-auto">
                     <Phone className="w-4 h-4 text-[#C22126] stroke-[2.5] flex-shrink-0" />
                     <a
                       href={`tel:${office.contact.replace(/[^0-9+]/g, '')}`}
-                      className="text-sm font-bold text-neutral-800 hover:text-[#E5252B] transition-colors"
+                      className="text-sm font-bold text-neutral-800 hover:text-[#E5252B] transition-colors dark:text-[var(--text-title)]"
                     >
                       {office.contact}
                     </a>

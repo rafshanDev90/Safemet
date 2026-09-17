@@ -1,14 +1,102 @@
 @import "tailwindcss";
 
+/* Enable class-based dark mode for Tailwind v4 (toggled via `.dark` on <html>) */
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  /* Light theme (default) — values match the existing light design exactly. */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f4f5f6;
+  --bg-tertiary: #f8f9fa;
+  --bg-quaternary: #f2f2f2;
+  --bg-quinary: #f4f5f7;
+  --bg-card: #ffffff;
+  --bg-input: #ffffff;
+  --bg-badge: #fde8e9;
+  --bg-badge-border: #f8b4b7;
+  --bg-hover: #f9fafb;
+
+  --text-heading: #1f2427;
+  --text-title: #1e2327;
+  --text-strong: #1a1e21;
+  --text-stronger: #1a1d20;
+  --text-ink: #111827;
+  --text-brand: #1a1a1a;
+  --text-navy: #1f2428;
+  --text-slate: #202528;
+  --text-body: #333333;
+  --text-muted: #555a60;
+  --text-dim: #444a50;
+  --text-faint: #2c3236;
+  --text-gray: #9ca3af;
+
+  --border-soft: #f3f4f6;
+  --border-default: #e5e7eb;
+  --border-strong: #d4d4d4;
+
+  --accent: #E5252B;
+  --accent-dark: #C22126;
+  --header-bg: #202528;
+  --footer-bg: #1e2327;
+}
+
+.dark {
+  /* Dark theme — deep neutral palette with proper layering. */
+  --bg-primary: #0f1115;
+  --bg-secondary: #171a1f;
+  --bg-tertiary: #14171c;
+  --bg-quaternary: #13161a;
+  --bg-quinary: #14171b;
+  --bg-card: #1a1d23;
+  --bg-input: #1c2026;
+  --bg-badge: #4a2a2e;
+  --bg-badge-border: #5f363b;
+  --bg-hover: #23272e;
+
+  --text-heading: #e7e9ec;
+  --text-title: #e4e6ea;
+  --text-strong: #e7e9ec;
+  --text-stronger: #e7e9ec;
+  --text-ink: #e4e6ea;
+  --text-brand: #d8dbe0;
+  --text-navy: #e4e6ea;
+  --text-slate: #e0e3e7;
+  --text-body: #d6d9de;
+  --text-muted: #a7adb6;
+  --text-dim: #a0a6af;
+  --text-faint: #99a0aa;
+  --text-gray: #a3a8b1;
+
+  --border-soft: #23272e;
+  --border-default: #2a2f37;
+  --border-strong: #3a414a;
+
+  --accent: #E5252B;
+  --accent-dark: #e63a40;
+  --header-bg: #16181c;
+  --footer-bg: #15171b;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
-    background-color: #202528;
+    scroll-padding-top: 96px;
+    background-color: var(--header-bg);
   }
   body {
-    background-color: #202528;
-    color: #333333;
+    background-color: var(--header-bg);
+    color: var(--text-body);
     overflow-x: hidden;
+  }
+}
+
+/* Smooth theme switching without disabling existing hover transitions. */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    transition: background-color 0.3s ease;
+  }
+  body {
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 }
 
@@ -50,3 +138,45 @@
   animation: fadeIn 0.25s ease-out forwards;
 }
 
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-fadeInScale {
+  animation: fadeInScale 0.3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fadeIn,
+  .animate-fadeInScale {
+    animation: none;
+  }
+}
+
+/* Bangla (বাংলা) typography — applied only when <html lang="bn">.
+ * Overrides the site-wide Montserrat + tracking utilities so Bengali text
+ * renders in the Hind Siliguri webfont with natural letter spacing. */
+html[lang="bn"] * {
+  font-family: "Hind Siliguri", "Montserrat", sans-serif !important;
+  letter-spacing: 0 !important;
+}
+
+html[lang="bn"] p,
+html[lang="bn"] h1,
+html[lang="bn"] h2,
+html[lang="bn"] h3,
+html[lang="bn"] h4,
+html[lang="bn"] h5,
+html[lang="bn"] h6,
+html[lang="bn"] li,
+html[lang="bn"] a,
+html[lang="bn"] button {
+  line-height: 1.6 !important;
+}

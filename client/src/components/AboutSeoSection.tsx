@@ -1,16 +1,21 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Container } from './Container';
+import { Reveal } from './Reveal';
 
 export const AboutSeoSection: React.FC = () => {
+  const { t } = useTranslation();
   return (
-    <section className="w-full bg-white py-12 md:py-16 border-t border-neutral-200">
+    <section className="w-full bg-white dark:bg-[var(--bg-primary)] py-16 md:py-24 border-t border-neutral-200 dark:border-[var(--border-default)]">
       <Container className="text-center">
-        <h3 className="text-base sm:text-lg font-extrabold tracking-wider text-[#1a1d20] uppercase mb-4 font-['Montserrat',sans-serif]">
-          FIRE SAFETY EQUIPMENT: BEST SUPPLIER IN BANGLADESH
-        </h3>
-        <p className="text-[13px] sm:text-sm text-[#555a60] leading-relaxed max-w-4xl mx-auto font-normal">
-          From air tanks to houses, fire fighting equipment is a necessity for any department and the right gear at the right time can make all the difference in a fight against a blaze. At Firehouse Supplies, we, Safemet as a fire safety equipment &amp; solution are proud to be the largest supplier of fire fighting equipment and gear in Bangladesh.
-        </p>
+        <Reveal>
+          <h3 className="text-base sm:text-lg font-extrabold tracking-wider text-[#1a1d20] dark:text-[var(--text-stronger)] uppercase mb-4 font-['Montserrat',sans-serif]">
+            {t('aboutSeo.title')}
+          </h3>
+          <p className="text-[13px] sm:text-sm text-[#555a60] dark:text-[var(--text-muted)] leading-relaxed max-w-4xl mx-auto font-normal">
+            {t('aboutSeo.text')}
+          </p>
+        </Reveal>
       </Container>
     </section>
   );

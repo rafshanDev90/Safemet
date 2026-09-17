@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { ChevronUp, Phone, Mail, Globe, MapPin } from 'lucide-react';
 import { Container } from './Container';
 
@@ -7,6 +8,7 @@ interface FooterProps {
 }
 
 export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
+  const { t } = useTranslation();
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -33,10 +35,10 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           <div className="flex flex-col space-y-4">
             <h4 className="text-sm sm:text-[15px] font-extrabold uppercase tracking-wider flex items-center gap-2 text-white">
               <span className="w-2.5 h-2.5 bg-[#E5252B] inline-block" />
-              ABOUT US
+              {t('footer.aboutTitle')}
             </h4>
             <p className="text-[13px] sm:text-sm text-neutral-300 leading-relaxed">
-              Safemet Fire Safety Equipment &amp; Solution as expressed by the name is dedicated to provide quality fire safety products and services. All of the products are imported from various countries of first world which are UL listed and FM approved.
+              {t('footer.aboutText')}
             </p>
             {/* Social Icons */}
             <div className="flex items-center space-x-2.5 pt-2">
@@ -67,13 +69,13 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           <div className="flex flex-col space-y-4">
             <h4 className="text-sm sm:text-[15px] font-extrabold uppercase tracking-wider flex items-center gap-2 text-white">
               <span className="w-2.5 h-2.5 bg-[#E5252B] inline-block" />
-              GET IN TOUCH
+              {t('footer.getInTouch')}
             </h4>
 
             <div className="space-y-3 text-[13px] sm:text-sm">
               <div>
                 <span className="text-[12px] text-neutral-400 font-bold uppercase tracking-wider block">
-                  HOTLINE
+                  {t('footer.hotline')}
                 </span>
                 <div className="flex items-center gap-2">
                   <Phone className="w-4 h-4 text-[#E5252B] flex-shrink-0" />
@@ -88,7 +90,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
               <div>
                 <span className="text-[12px] text-neutral-400 font-bold uppercase tracking-wider block">
-                  LANDLINE
+                  {t('footer.landline')}
                 </span>
                 <div className="flex items-center gap-2">
                   <Phone className="w-4 h-4 text-[#E5252B] flex-shrink-0" />
@@ -103,44 +105,44 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
               <div>
                 <span className="text-[12px] text-neutral-400 font-bold uppercase tracking-wider block">
-                  E-MAIL
+                  {t('footer.email')}
                 </span>
                 <div className="flex items-center gap-2">
                   <Mail className="w-4 h-4 text-[#E5252B] flex-shrink-0" />
                   <a
-                    href="mailto:inforngroupbd@gmail.com"
+                    href="mailto:infosafemetebd@gmail.com"
                     className="text-neutral-200 hover:text-[#E5252B] transition-colors"
                   >
-                    inforngroupbd@gmail.com
+                    infosafemetebd@gmail.com
                   </a>
                 </div>
               </div>
 
               <div>
                 <span className="text-[12px] text-neutral-400 font-bold uppercase tracking-wider block">
-                  WEBSITE
+                  {t('footer.website')}
                 </span>
                 <div className="flex items-center gap-2">
                   <Globe className="w-4 h-4 text-[#E5252B] flex-shrink-0" />
                   <a
-                    href="https://www.rngroupinfo.com"
+                    href="https://www.safemeteinfo.com"
                     target="_blank"
                     rel="noreferrer"
                     className="text-neutral-200 hover:text-[#E5252B] transition-colors"
                   >
-                    www.rngroupinfo.com
+                    www.safemeteinfo.com
                   </a>
                 </div>
               </div>
 
               <div>
                 <span className="text-[12px] text-neutral-400 font-bold uppercase tracking-wider block">
-                  ADDRESS
+                  {t('footer.address')}
                 </span>
                 <div className="flex items-start gap-2">
                   <MapPin className="w-4 h-4 text-[#E5252B] flex-shrink-0 mt-0.5" />
                   <span className="text-neutral-200 leading-relaxed">
-                    Holding no 9/2, 4th Floor, Avenue 5, Block B, Section 6, Mirpur, Dhaka-1216.
+                    {t('footer.addressValue')}
                   </span>
                 </div>
               </div>
@@ -151,7 +153,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           <div className="flex flex-col space-y-4">
             <h4 className="text-sm sm:text-[15px] font-extrabold uppercase tracking-wider flex items-center gap-2 text-white">
               <span className="w-2.5 h-2.5 bg-[#E5252B] inline-block" />
-              USEFUL LINKS
+              {t('footer.usefulLinks')}
             </h4>
 
             <ul className="space-y-2.5 text-[13px] sm:text-sm">
@@ -161,7 +163,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   onClick={(e) => handleLinkClick(e, 'home')}
                   className="text-neutral-300 hover:text-[#E5252B] transition-colors"
                 >
-                  Home
+                  {t('footer.linkHome')}
                 </a>
               </li>
               <li>
@@ -170,7 +172,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   onClick={(e) => handleLinkClick(e, 'about')}
                   className="text-neutral-300 hover:text-[#E5252B] transition-colors"
                 >
-                  About Us
+                  {t('footer.linkAbout')}
                 </a>
               </li>
               <li>
@@ -179,7 +181,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   onClick={(e) => handleLinkClick(e, 'projects')}
                   className="text-neutral-300 hover:text-[#E5252B] transition-colors"
                 >
-                  Picture Gallery
+                  {t('footer.linkPictureGallery')}
                 </a>
               </li>
               <li>
@@ -188,7 +190,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   onClick={(e) => handleLinkClick(e, 'advantages')}
                   className="text-neutral-300 hover:text-[#E5252B] transition-colors"
                 >
-                  Video Gallery
+                  {t('footer.linkVideoGallery')}
                 </a>
               </li>
               <li>
@@ -197,7 +199,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   onClick={(e) => handleLinkClick(e, '/products/fire-protection-system')}
                   className="text-neutral-300 hover:text-[#E5252B] transition-colors"
                 >
-                  Catalogue
+                  {t('footer.linkCatalogue')}
                 </a>
               </li>
               <li>
@@ -206,7 +208,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   onClick={(e) => handleLinkClick(e, 'contact')}
                   className="text-neutral-300 hover:text-[#E5252B] transition-colors"
                 >
-                  Contact Us
+                  {t('footer.linkContact')}
                 </a>
               </li>
             </ul>
@@ -219,7 +221,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
       <div className="w-full bg-[#161a1d] py-4 border-t border-neutral-800/80">
         <Container className="text-center">
           <p className="text-[13px] text-neutral-400 font-normal">
-            © 2026. All Rights Reserved
+            {t('footer.copyright')}
           </p>
         </Container>
       </div>
@@ -229,7 +231,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
         onClick={scrollToTop}
         id="scroll-to-top-btn"
         className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 w-11 h-11 min-w-[44px] min-h-[44px] rounded-full bg-[#E5252B] hover:bg-[#c21e24] text-white flex items-center justify-center shadow-xl transition-all duration-300 hover:scale-110 cursor-pointer focus:outline-none focus:ring-2 focus:ring-white"
-        aria-label="Scroll to top"
+        aria-label={t('footer.scrollTop')}
       >
         <ChevronUp className="w-6 h-6 stroke-[3]" />
       </button>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="100" viewBox="0 0 240 100">
+  <rect width="240" height="100" rx="12" fill="#f4f4f4"/>
+  <path d="M58,32 L78,50 L58,68 L38,50 Z" fill="#16a34a" opacity="0.85"/>
+  <rect x="56" y="60" width="4" height="12" fill="#16a34a" opacity="0.85"/>
+  <text x="94" y="52" font-family="Arial, sans-serif" font-weight="700" font-size="16" letter-spacing="2" fill="#6b7280">CLIENT LOGO</text>
+  <text x="94" y="68" font-family="Arial, sans-serif" font-size="9" letter-spacing="3" fill="#9ca3af">PLACEHOLDER 04</text>
+</svg>

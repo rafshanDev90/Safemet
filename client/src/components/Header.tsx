@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { SafemeteLogo } from './SafemeteLogo';
 import { Phone, Mail, Menu, X, ChevronDown } from 'lucide-react';
 import { CATEGORIES, CategoryInfo } from '../productsData';
 import { Container } from './Container';
+import { ThemeToggle } from './ThemeToggle';
+import { LanguageToggle } from './LanguageToggle';
 
 interface HeaderProps {
   activeTab?: string;
@@ -23,6 +26,7 @@ export const Header: React.FC<HeaderProps> = ({
   onNavigate,
   forceDropdownOpen = false,
 }) => {
+  const { t } = useTranslation();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
   const [mobileMediaOpen, setMobileMediaOpen] = useState(false);
@@ -30,13 +34,15 @@ export const Header: React.FC<HeaderProps> = ({
 
   const activeDropdown = hoveredMenu ?? (forceDropdownOpen ? 'products' : null);
 
+  const mediaCategories = t('header.mediaCategories', { returnObjects: true }) as string[];
+
   const navItems = [
-    { label: 'HOME', id: 'home', path: '/' },
-    { label: 'ABOUT US', id: 'about', path: '/about' },
-    { label: 'PRODUCTS', id: 'products', path: '/products/fire-protection-system', hasDropdown: true },
-    { label: 'PROJECTS', id: 'projects', path: '/projects' },
-    { label: 'MEDIA', id: 'media', path: '/media', hasDropdown: true },
-    { label: 'CONTACT US', id: 'contact', path: '/contact' },
+    { label: t('header.home'), id: 'home', path: '/' },
+    { label: t('header.about'), id: 'about', path: '/about' },
+    { label: t('header.products'), id: 'products', path: '/products/fire-protection-system', hasDropdown: true },
+    { label: t('header.projects'), id: 'projects', path: '/projects' },
+    { label: t('header.media'), id: 'media', path: '/media', hasDropdown: true },
+    { label: t('header.contact'), id: 'contact', path: '/contact' },
   ];
 
   const handleNavClick = (pathOrId: string) => {
@@ -100,7 +106,7 @@ export const Header: React.FC<HeaderProps> = ({
                     {isDropdownActive && (
                       <div
                         id="products-dropdown-menu"
-                        className="absolute top-[84px] left-0 w-[270px] sm:w-[290px] bg-white text-[#202528] shadow-2xl z-50 border border-neutral-200/80 border-t-0 animate-fadeIn"
+                        className="absolute top-[84px] left-0 w-[270px] sm:w-[290px] bg-white dark:bg-[#1a1d23] text-[#202528] dark:text-[#e0e3e7] shadow-2xl z-50 border border-neutral-200/80 dark:border-[#2a2f37] border-t-0 animate-fadeIn"
                       >
                         <div className="flex flex-col">
                           {CATEGORIES.map((cat, idx) => {
@@ -112,14 +118,14 @@ export const Header: React.FC<HeaderProps> = ({
                                   onClick={() => handleCategorySelect(cat)}
                                   className={`w-full text-left px-6 py-4 text-[13px] sm:text-[14px] font-extrabold tracking-wider uppercase transition-colors cursor-pointer ${
                                     isCurrentCat
-                                      ? 'text-[#E5252B] bg-neutral-50'
-                                      : 'text-[#1e2327] hover:bg-neutral-50 hover:text-[#E5252B]'
+                                      ? 'text-[#E5252B] bg-neutral-50 dark:bg-[#23272e]'
+                                      : 'text-[#1e2327] dark:text-[#e0e3e7] hover:bg-neutral-50 dark:hover:bg-[#23272e] hover:text-[#E5252B]'
                                   }`}
                                 >
-                                  {cat.name}
+                                  {t(`categories.${cat.slug}.name`)}
                                 </button>
                                 {idx < CATEGORIES.length - 1 && (
-                                  <div className="w-full h-[1px] bg-neutral-200/80" />
+                                  <div className="w-full h-[1px] bg-neutral-200/80 dark:bg-[#2a2f37]" />
                                 )}
                               </div>
                             );
@@ -158,19 +164,19 @@ export const Header: React.FC<HeaderProps> = ({
                     {isDropdownActive && (
                       <div
                         id="media-dropdown-menu"
-                        className="absolute top-[84px] left-0 w-[220px] sm:w-[240px] bg-white text-[#202528] shadow-2xl z-50 border border-neutral-200/80 border-t-0 animate-fadeIn"
+                        className="absolute top-[84px] left-0 w-[220px] sm:w-[240px] bg-white dark:bg-[#1a1d23] text-[#202528] dark:text-[#e0e3e7] shadow-2xl z-50 border border-neutral-200/80 dark:border-[#2a2f37] border-t-0 animate-fadeIn"
                       >
                         <div className="flex flex-col">
-                          {MEDIA_CATEGORIES.map((cat, idx) => (
+                          {mediaCategories.map((cat, idx) => (
                             <div key={cat} className="flex flex-col">
                               <button
                                 onClick={() => handleNavClick('projects')}
-                                className="w-full text-left px-6 py-4 text-[13px] sm:text-[14px] font-extrabold tracking-wider uppercase text-[#1e2327] hover:bg-neutral-50 hover:text-[#E5252B] transition-colors cursor-pointer"
+                                className="w-full text-left px-6 py-4 text-[13px] sm:text-[14px] font-extrabold tracking-wider uppercase text-[#1e2327] dark:text-[#e0e3e7] hover:bg-neutral-50 dark:hover:bg-[#23272e] hover:text-[#E5252B] transition-colors cursor-pointer"
                               >
                                 {cat}
                               </button>
-                              {idx < MEDIA_CATEGORIES.length - 1 && (
-                                <div className="w-full h-[1px] bg-neutral-200/80" />
+                              {idx < mediaCategories.length - 1 && (
+                                <div className="w-full h-[1px] bg-neutral-200/80 dark:bg-[#2a2f37]" />
                               )}
                             </div>
                           ))}
@@ -204,34 +210,23 @@ export const Header: React.FC<HeaderProps> = ({
             })}
           </nav>
 
-          {/* Contact Numbers on Right */}
-          <div className="hidden md:flex flex-col items-end text-right font-['Montserrat',sans-serif]">
-            <a
-              href="tel:+08007777777"
-              className="text-white font-bold text-base tracking-wide hover:text-[#E5252B] transition-colors flex items-center gap-2"
-            >
-              <Phone className="w-4 h-4 text-[#E5252B]" />
-              <span>+0800-7777777</span>
-            </a>
-            <a
-              href="mailto:mktg980@prangroup.com"
-              className="text-[#9ca3af] text-[13px] hover:text-white transition-colors flex items-center gap-2"
-            >
-              <Mail className="w-4 h-4 text-neutral-400" />
-              <span>mktg980@prangroup.com</span>
-            </a>
-          </div>
+          {/* Right cluster: language + theme toggle + mobile hamburger */}
+          <div className="flex items-center gap-3 md:gap-4 lg:gap-5">
+            <LanguageToggle />
 
-          {/* Mobile Hamburger Button */}
-          <button
-            id="mobile-menu-toggle"
-            onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden min-w-[44px] min-h-[44px] flex items-center justify-center text-neutral-300 hover:text-white focus:outline-none cursor-pointer rounded-sm"
-            aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
-            aria-expanded={mobileOpen}
-          >
-            {mobileOpen ? <X className="w-6 h-6 text-[#E5252B]" /> : <Menu className="w-6 h-6" />}
-          </button>
+            <ThemeToggle />
+
+            {/* Mobile Hamburger Button */}
+            <button
+              id="mobile-menu-toggle"
+              onClick={() => setMobileOpen(!mobileOpen)}
+              className="lg:hidden min-w-[44px] min-h-[44px] flex items-center justify-center text-neutral-300 hover:text-white focus:outline-none cursor-pointer rounded-sm"
+              aria-label={mobileOpen ? t('header.closeMenu') : t('header.openMenu')}
+              aria-expanded={mobileOpen}
+            >
+              {mobileOpen ? <X className="w-6 h-6 text-[#E5252B]" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </Container>
 
         {/* Mobile Dropdown Menu with Accordions */}
@@ -254,7 +249,7 @@ export const Header: React.FC<HeaderProps> = ({
                           setMobileProductsOpen(!mobileProductsOpen);
                         }}
                         className="min-w-[44px] min-h-[44px] flex items-center justify-center text-neutral-400 hover:text-white"
-                        aria-label="Toggle Products sub-menu"
+                        aria-label={t('header.toggleProductsSub')}
                       >
                         <ChevronDown
                           className={`w-4 h-4 transition-transform duration-200 ${
@@ -277,7 +272,7 @@ export const Header: React.FC<HeaderProps> = ({
                                 : 'text-neutral-300 hover:text-white hover:bg-[#22272a]'
                             }`}
                           >
-                            {cat.name}
+                            {t(`categories.${cat.slug}.name`)}
                           </button>
                         ))}
                       </div>
@@ -302,7 +297,7 @@ export const Header: React.FC<HeaderProps> = ({
                           setMobileMediaOpen(!mobileMediaOpen);
                         }}
                         className="min-w-[44px] min-h-[44px] flex items-center justify-center text-neutral-400 hover:text-white"
-                        aria-label="Toggle Media sub-menu"
+                        aria-label={t('header.toggleMediaSub')}
                       >
                         <ChevronDown
                           className={`w-4 h-4 transition-transform duration-200 ${
@@ -315,7 +310,7 @@ export const Header: React.FC<HeaderProps> = ({
                     {/* Media Collapsible Accordion Submenu */}
                     {mobileMediaOpen && (
                       <div className="pl-3 pr-1 pb-2 pt-1 space-y-1 border-l-2 border-[#E5252B] ml-2 animate-fadeIn bg-black/20 rounded-r">
-                        {MEDIA_CATEGORIES.map((cat) => (
+                        {mediaCategories.map((cat) => (
                           <button
                             key={cat}
                             onClick={() => handleNavClick('projects')}
@@ -349,14 +344,14 @@ export const Header: React.FC<HeaderProps> = ({
                 className="min-h-[44px] flex items-center justify-center gap-2 bg-[#252a2e] hover:bg-[#E5252B] text-white font-bold text-sm uppercase tracking-wider rounded-sm transition-colors"
               >
                 <Phone className="w-4 h-4 text-[#E5252B] group-hover:text-white" />
-                <span>Call Us: +0800-7777777</span>
+                <span>{t('header.callUs')}</span>
               </a>
               <a
-                href="mailto:mktg980@prangroup.com"
+                href="mailto:mktg980@safemete.com"
                 className="min-h-[44px] flex items-center justify-center gap-2 bg-[#252a2e] hover:bg-neutral-700 text-neutral-300 text-sm tracking-wide rounded-sm transition-colors"
               >
                 <Mail className="w-4 h-4 text-neutral-400" />
-                <span>mktg980@prangroup.com</span>
+                <span>mktg980@safemete.com</span>
               </a>
             </div>
           </div>
