@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { SafemeteLogo } from './SafemeteLogo';
 import { Phone, Mail, Menu, X, ChevronDown } from 'lucide-react';
@@ -27,10 +27,32 @@ export const Header: React.FC<HeaderProps> = ({
   forceDropdownOpen = false,
 }) => {
   const { t } = useTranslation();
+  const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
   const [mobileMediaOpen, setMobileMediaOpen] = useState(false);
   const [hoveredMenu, setHoveredMenu] = useState<string | null>(null);
+
+  /* Transparent-to-solid scroll transition: become solid once scrolled past 50px. */
+  useEffect(() => {
+    let rafId = 0;
+    const update = () => setScrolled(window.scrollY > 50);
+    const onScroll = () => {
+      if (rafId) return;
+      rafId = window.requestAnimationFrame(() => {
+        rafId = 0;
+        update();
+      });
+    };
+    update();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      if (rafId) window.cancelAnimationFrame(rafId);
+    };
+  }, []);
+
+  const isSolid = scrolled || mobileOpen;
 
   const activeDropdown = hoveredMenu ?? (forceDropdownOpen ? 'products' : null);
 
@@ -62,12 +84,19 @@ export const Header: React.FC<HeaderProps> = ({
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full shadow-lg font-['Montserrat',sans-serif]" id="main-header">
+    <header
+      className={`top-0 left-0 w-full z-50 font-['Montserrat',sans-serif] transition-all duration-300 ease-in-out ${
+        isSolid
+          ? 'fixed bg-[#202528] text-white shadow-md'
+          : 'absolute bg-transparent text-white'
+      }`}
+      id="main-header"
+    >
       {/* Top Red Accent Bar */}
       <div className="w-full h-[3px] bg-[#E5252B]" />
 
       {/* Main Navigation Bar */}
-      <div className="w-full bg-[#202528] text-white border-b border-[#2d3338]">
+      <div className={`w-full text-white ${isSolid ? 'border-b border-[#2d3338]' : 'border-b border-transparent'}`}>
         <Container className="h-[84px] flex items-center justify-between">
           {/* Brand Logo */}
           <div onClick={() => handleNavClick('home')} className="cursor-pointer">
@@ -93,10 +122,12 @@ export const Header: React.FC<HeaderProps> = ({
                     <button
                       id={`nav-link-${item.id}`}
                       onClick={() => handleNavClick(item.id)}
-                      className={`transition-colors duration-200 uppercase py-1 cursor-pointer flex items-center gap-1 ${
+                      className={`transition-all duration-300 uppercase py-1 cursor-pointer flex items-center gap-1 ${
                         isHighlighted
                           ? 'text-[#E5252B]'
-                          : 'text-neutral-300 hover:text-white'
+                          : scrolled
+                            ? 'text-neutral-300 hover:text-white'
+                            : 'text-white hover:text-white/85'
                       }`}
                     >
                       <span>{item.label}</span>
@@ -106,7 +137,7 @@ export const Header: React.FC<HeaderProps> = ({
                     {isDropdownActive && (
                       <div
                         id="products-dropdown-menu"
-                        className="absolute top-[84px] left-0 w-[270px] sm:w-[290px] bg-white dark:bg-[#1a1d23] text-[#202528] dark:text-[#e0e3e7] shadow-2xl z-50 border border-neutral-200/80 dark:border-[#2a2f37] border-t-0 animate-fadeIn"
+                        className="absolute top-[84px] left-0 w-[270px] sm:w-[290px] bg-white dark:bg-[#1a1d23] text-[#202528] dark:text-[#e0e3e7] shadow-2xl z-[60] border border-neutral-200/80 dark:border-[#2a2f37] border-t-0 animate-fadeIn"
                       >
                         <div className="flex flex-col">
                           {CATEGORIES.map((cat, idx) => {
@@ -151,10 +182,12 @@ export const Header: React.FC<HeaderProps> = ({
                     <button
                       id={`nav-link-${item.id}`}
                       onClick={() => handleNavClick(item.id)}
-                      className={`transition-colors duration-200 uppercase py-1 cursor-pointer flex items-center gap-1 ${
+                      className={`transition-all duration-300 uppercase py-1 cursor-pointer flex items-center gap-1 ${
                         isHighlighted
                           ? 'text-[#E5252B]'
-                          : 'text-neutral-300 hover:text-white'
+                          : scrolled
+                            ? 'text-neutral-300 hover:text-white'
+                            : 'text-white hover:text-white/85'
                       }`}
                     >
                       <span>{item.label}</span>
@@ -164,7 +197,7 @@ export const Header: React.FC<HeaderProps> = ({
                     {isDropdownActive && (
                       <div
                         id="media-dropdown-menu"
-                        className="absolute top-[84px] left-0 w-[220px] sm:w-[240px] bg-white dark:bg-[#1a1d23] text-[#202528] dark:text-[#e0e3e7] shadow-2xl z-50 border border-neutral-200/80 dark:border-[#2a2f37] border-t-0 animate-fadeIn"
+                        className="absolute top-[84px] left-0 w-[220px] sm:w-[240px] bg-white dark:bg-[#1a1d23] text-[#202528] dark:text-[#e0e3e7] shadow-2xl z-[60] border border-neutral-200/80 dark:border-[#2a2f37] border-t-0 animate-fadeIn"
                       >
                         <div className="flex flex-col">
                           {mediaCategories.map((cat, idx) => (
@@ -195,10 +228,12 @@ export const Header: React.FC<HeaderProps> = ({
                   key={item.id}
                   id={`nav-link-${item.id}`}
                   onClick={() => handleNavClick(item.id)}
-                  className={`transition-colors duration-200 uppercase py-1 cursor-pointer relative ${
+                  className={`transition-all duration-300 uppercase py-1 cursor-pointer relative ${
                     isHighlighted
                       ? 'text-[#E5252B]'
-                      : 'text-neutral-300 hover:text-white'
+                      : scrolled
+                        ? 'text-neutral-300 hover:text-white'
+                        : 'text-white hover:text-white/85'
                   }`}
                 >
                   {item.label}
@@ -220,7 +255,9 @@ export const Header: React.FC<HeaderProps> = ({
             <button
               id="mobile-menu-toggle"
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="lg:hidden min-w-[44px] min-h-[44px] flex items-center justify-center text-neutral-300 hover:text-white focus:outline-none cursor-pointer rounded-sm"
+              className={`lg:hidden min-w-[44px] min-h-[44px] flex items-center justify-center transition-all duration-300 focus:outline-none cursor-pointer rounded-sm ${
+                scrolled ? 'text-neutral-300 hover:text-white' : 'text-white hover:text-white/85'
+              }`}
               aria-label={mobileOpen ? t('header.closeMenu') : t('header.openMenu')}
               aria-expanded={mobileOpen}
             >
