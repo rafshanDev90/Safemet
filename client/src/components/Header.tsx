@@ -87,7 +87,7 @@ export const Header: React.FC<HeaderProps> = ({
     <header
       className={`top-0 left-0 w-full z-50 font-['Montserrat',sans-serif] transition-all duration-300 ease-in-out ${
         isSolid
-          ? 'fixed bg-[#202528] text-white shadow-md'
+          ? 'fixed bg-white text-zinc-900 shadow-md dark:bg-[#202528] dark:text-white'
           : 'absolute bg-transparent text-white'
       }`}
       id="main-header"
@@ -96,7 +96,7 @@ export const Header: React.FC<HeaderProps> = ({
       <div className="w-full h-[3px] bg-[#E5252B]" />
 
       {/* Main Navigation Bar */}
-      <div className={`w-full text-white ${isSolid ? 'border-b border-[#2d3338]' : 'border-b border-transparent'}`}>
+      <div className={`w-full ${isSolid ? 'border-b border-neutral-200 dark:border-[#2d3338]' : 'border-b border-transparent'}`}>
         <Container className="h-[84px] flex items-center justify-between">
           {/* Brand Logo */}
           <div onClick={() => handleNavClick('home')} className="cursor-pointer">
@@ -126,7 +126,7 @@ export const Header: React.FC<HeaderProps> = ({
                         isHighlighted
                           ? 'text-[#E5252B]'
                           : scrolled
-                            ? 'text-neutral-300 hover:text-white'
+                            ? 'text-zinc-900 hover:text-[#E5252B] dark:text-neutral-300 dark:hover:text-white'
                             : 'text-white hover:text-white/85'
                       }`}
                     >
@@ -186,7 +186,7 @@ export const Header: React.FC<HeaderProps> = ({
                         isHighlighted
                           ? 'text-[#E5252B]'
                           : scrolled
-                            ? 'text-neutral-300 hover:text-white'
+                            ? 'text-zinc-900 hover:text-[#E5252B] dark:text-neutral-300 dark:hover:text-white'
                             : 'text-white hover:text-white/85'
                       }`}
                     >
@@ -232,7 +232,7 @@ export const Header: React.FC<HeaderProps> = ({
                     isHighlighted
                       ? 'text-[#E5252B]'
                       : scrolled
-                        ? 'text-neutral-300 hover:text-white'
+                        ? 'text-zinc-900 hover:text-[#E5252B] dark:text-neutral-300 dark:hover:text-white'
                         : 'text-white hover:text-white/85'
                   }`}
                 >
@@ -256,7 +256,9 @@ export const Header: React.FC<HeaderProps> = ({
               id="mobile-menu-toggle"
               onClick={() => setMobileOpen(!mobileOpen)}
               className={`lg:hidden min-w-[44px] min-h-[44px] flex items-center justify-center transition-all duration-300 focus:outline-none cursor-pointer rounded-sm ${
-                scrolled ? 'text-neutral-300 hover:text-white' : 'text-white hover:text-white/85'
+                scrolled
+                  ? 'text-zinc-900 hover:text-[#E5252B] dark:text-neutral-300 dark:hover:text-white'
+                  : 'text-white hover:text-white/85'
               }`}
               aria-label={mobileOpen ? t('header.closeMenu') : t('header.openMenu')}
               aria-expanded={mobileOpen}
@@ -268,15 +270,15 @@ export const Header: React.FC<HeaderProps> = ({
 
         {/* Mobile Dropdown Menu with Accordions */}
         {mobileOpen && (
-          <div className="lg:hidden bg-[#1a1e21] border-t border-neutral-800 px-4 sm:px-6 py-4 space-y-1.5 shadow-2xl animate-fadeIn">
+          <div className="lg:hidden bg-white dark:bg-[#1a1e21] border-t border-neutral-200 dark:border-neutral-800 px-4 sm:px-6 py-4 space-y-1.5 shadow-2xl animate-fadeIn">
             {navItems.map((item) => {
               if (item.id === 'products') {
                 return (
-                  <div key={item.id} className="border-b border-neutral-800/80 pb-1">
+                  <div key={item.id} className="border-b border-neutral-200/80 dark:border-neutral-800/80 pb-1">
                     <div className="flex items-center justify-between">
                       <button
                         onClick={() => handleNavClick(item.id)}
-                        className="flex-1 min-h-[44px] flex items-center text-left text-sm font-bold uppercase tracking-wider text-neutral-200 hover:text-[#E5252B] transition-colors"
+                        className="flex-1 min-h-[44px] flex items-center text-left text-sm font-bold uppercase tracking-wider text-zinc-900 dark:text-neutral-200 hover:text-[#E5252B] transition-colors"
                       >
                         {item.label}
                       </button>
@@ -285,7 +287,7 @@ export const Header: React.FC<HeaderProps> = ({
                           e.stopPropagation();
                           setMobileProductsOpen(!mobileProductsOpen);
                         }}
-                        className="min-w-[44px] min-h-[44px] flex items-center justify-center text-neutral-400 hover:text-white"
+                        className="min-w-[44px] min-h-[44px] flex items-center justify-center text-zinc-500 dark:text-neutral-400 hover:text-[#E5252B] dark:hover:text-white"
                         aria-label={t('header.toggleProductsSub')}
                       >
                         <ChevronDown
@@ -298,15 +300,15 @@ export const Header: React.FC<HeaderProps> = ({
 
                     {/* Products Collapsible Accordion Submenu */}
                     {mobileProductsOpen && (
-                      <div className="pl-3 pr-1 pb-2 pt-1 space-y-1 border-l-2 border-[#E5252B] ml-2 animate-fadeIn bg-black/20 rounded-r">
+                      <div className="pl-3 pr-1 pb-2 pt-1 space-y-1 border-l-2 border-[#E5252B] ml-2 animate-fadeIn bg-neutral-50 dark:bg-black/20 rounded-r">
                         {CATEGORIES.map((cat) => (
                           <button
                             key={cat.slug}
                             onClick={() => handleCategorySelect(cat)}
                             className={`min-h-[40px] flex items-center w-full text-left px-3 py-2 text-[13px] font-bold uppercase tracking-wider transition-colors rounded ${
                               activeCategory === cat.slug
-                                ? 'text-[#E5252B] bg-[#22272a]'
-                                : 'text-neutral-300 hover:text-white hover:bg-[#22272a]'
+                                ? 'text-[#E5252B] bg-neutral-100 dark:bg-[#22272a]'
+                                : 'text-zinc-700 dark:text-neutral-300 hover:text-[#E5252B] dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-[#22272a]'
                             }`}
                           >
                             {t(`categories.${cat.slug}.name`)}
@@ -320,11 +322,11 @@ export const Header: React.FC<HeaderProps> = ({
 
               if (item.id === 'media') {
                 return (
-                  <div key={item.id} className="border-b border-neutral-800/80 pb-1">
+                  <div key={item.id} className="border-b border-neutral-200/80 dark:border-neutral-800/80 pb-1">
                     <div className="flex items-center justify-between">
                       <button
                         onClick={() => handleNavClick(item.id)}
-                        className="flex-1 min-h-[44px] flex items-center text-left text-sm font-bold uppercase tracking-wider text-neutral-200 hover:text-[#E5252B] transition-colors"
+                        className="flex-1 min-h-[44px] flex items-center text-left text-sm font-bold uppercase tracking-wider text-zinc-900 dark:text-neutral-200 hover:text-[#E5252B] transition-colors"
                       >
                         {item.label}
                       </button>
@@ -333,7 +335,7 @@ export const Header: React.FC<HeaderProps> = ({
                           e.stopPropagation();
                           setMobileMediaOpen(!mobileMediaOpen);
                         }}
-                        className="min-w-[44px] min-h-[44px] flex items-center justify-center text-neutral-400 hover:text-white"
+                        className="min-w-[44px] min-h-[44px] flex items-center justify-center text-zinc-500 dark:text-neutral-400 hover:text-[#E5252B] dark:hover:text-white"
                         aria-label={t('header.toggleMediaSub')}
                       >
                         <ChevronDown
@@ -346,12 +348,12 @@ export const Header: React.FC<HeaderProps> = ({
 
                     {/* Media Collapsible Accordion Submenu */}
                     {mobileMediaOpen && (
-                      <div className="pl-3 pr-1 pb-2 pt-1 space-y-1 border-l-2 border-[#E5252B] ml-2 animate-fadeIn bg-black/20 rounded-r">
+                      <div className="pl-3 pr-1 pb-2 pt-1 space-y-1 border-l-2 border-[#E5252B] ml-2 animate-fadeIn bg-neutral-50 dark:bg-black/20 rounded-r">
                         {mediaCategories.map((cat) => (
                           <button
                             key={cat}
                             onClick={() => handleNavClick('projects')}
-                            className="min-h-[40px] flex items-center w-full text-left px-3 py-2 text-[13px] font-bold uppercase tracking-wider text-neutral-300 hover:text-white hover:bg-[#22272a] rounded transition-colors"
+                            className="min-h-[40px] flex items-center w-full text-left px-3 py-2 text-[13px] font-bold uppercase tracking-wider text-zinc-700 dark:text-neutral-300 hover:text-[#E5252B] dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-[#22272a] rounded transition-colors"
                           >
                             {cat}
                           </button>
@@ -363,10 +365,10 @@ export const Header: React.FC<HeaderProps> = ({
               }
 
               return (
-                <div key={item.id} className="border-b border-neutral-800/80 last:border-b-0">
+                <div key={item.id} className="border-b border-neutral-200/80 dark:border-neutral-800/80 last:border-b-0">
                   <button
                     onClick={() => handleNavClick(item.id)}
-                    className="w-full min-h-[44px] flex items-center text-left text-xs font-bold uppercase tracking-wider text-neutral-200 hover:text-[#E5252B] transition-colors"
+                    className="w-full min-h-[44px] flex items-center text-left text-xs font-bold uppercase tracking-wider text-zinc-900 dark:text-neutral-200 hover:text-[#E5252B] transition-colors"
                   >
                     {item.label}
                   </button>
@@ -375,7 +377,7 @@ export const Header: React.FC<HeaderProps> = ({
             })}
 
             {/* Mobile Menu Direct Contact CTA Buttons */}
-            <div className="pt-4 mt-2 border-t border-neutral-700/80 flex flex-col gap-2">
+            <div className="pt-4 mt-2 border-t border-neutral-200 dark:border-neutral-700/80 flex flex-col gap-2">
               <a
                 href="tel:+08007777777"
                 className="min-h-[44px] flex items-center justify-center gap-2 bg-[#252a2e] hover:bg-[#E5252B] text-white font-bold text-sm uppercase tracking-wider rounded-sm transition-colors"
