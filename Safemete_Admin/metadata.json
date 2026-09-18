@@ -1,6 +1,6 @@
 {
-  "name": "SAFEMETE Admin Panel",
-  "description": "Production-ready Admin Panel for SAFEMETE Fire Safety Equipment with Role-Based Access Control, Products Management, MFA, and TanStack Query.",
+  "name": "safemete Admin Panel",
+  "description": "Production-ready Admin Panel for safemete Fire Safety Equipment with Role-Based Access Control, Products Management, MFA, and TanStack Query.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

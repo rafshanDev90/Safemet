@@ -16,6 +16,7 @@ import { ContactPage } from './components/ContactPage';
 import { ProductDetailPage } from './components/ProductDetailPage';
 import { CategoryProductsPage } from './components/CategoryProductsPage';
 import { Footer } from './components/Footer';
+import { WhatsAppWidget } from './components/WhatsAppWidget';
 import { CATEGORIES } from './productsData';
 
 type ViewMode = 'home' | 'about' | 'projects' | 'contact' | 'category' | 'product-detail';
@@ -221,6 +222,9 @@ export default function App() {
 
       {/* Corporate Footer with Navigation Links */}
       <Footer onNavigate={navigateTo} />
+
+      {/* Floating WhatsApp Chat Widget (rendered once site-wide) */}
+      <WhatsAppWidget />
     </div>
   );
 }

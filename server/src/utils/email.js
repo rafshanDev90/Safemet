@@ -22,11 +22,11 @@ export async function sendOtpEmail(to, otp) {
     const info = await transporter.sendMail({
       from: process.env.OTP_FROM || process.env.SMTP_USER,
       to,
-      subject: 'SAFEMETE - Your Login Verification Code',
+      subject: 'safemete - Your Login Verification Code',
       html: `
         <div style="font-family:Arial,sans-serif;max-width:480px;margin:0 auto;padding:20px;">
           <div style="background:#E5252B;color:white;padding:16px;text-align:center;border-radius:8px 8px 0 0;">
-            <h2 style="margin:0;font-size:20px;">SAFEMETE Fire Safety</h2>
+            <h2 style="margin:0;font-size:20px;">safemete Fire Safety</h2>
           </div>
           <div style="background:#f9f9f9;padding:24px;border:1px solid #ddd;border-top:none;border-radius:0 0 8px 8px;">
             <p style="color:#333;font-size:14px;">Your one-time verification code is:</p>

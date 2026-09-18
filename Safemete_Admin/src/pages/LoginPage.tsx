@@ -41,7 +41,7 @@ export const LoginPage: React.FC = () => {
       if (res.requiresMfa) {
         navigate('/mfa');
       } else {
-        toastSuccess('Welcome back', 'Successfully logged in to SAFEMETE Admin Panel.');
+        toastSuccess('Welcome back', 'Successfully logged in to safemete Admin Panel.');
         navigate('/dashboard');
       }
     } catch (err: any) {
@@ -76,7 +76,7 @@ export const LoginPage: React.FC = () => {
             <Flame className="w-8 h-8 fill-white/20" />
           </div>
           <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">
-            SAFEMETE
+            safemete
           </h1>
           <p className="text-xs sm:text-sm text-slate-400 mt-1 font-medium">
             Fire Safety Equipment Enterprise Admin Portal

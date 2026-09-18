@@ -1,6 +1,6 @@
 server.zip
 client/dist.zip
-Safemete_Admin/dist.zip
+safemete_Admin/dist.zip
 deploy/
 node_modules/
 *.log
