@@ -7,14 +7,16 @@ import { ProjectsSection } from './components/ProjectsSection';
 import { ServicesSection } from './components/ServicesSection';
 import { MissionVisionSection } from './components/MissionVisionSection';
 import { PartnersSection } from './components/PartnersSection';
-import { QuoteSection } from './components/QuoteSection';
 import { AboutSeoSection } from './components/AboutSeoSection';
+import { PartnersClientsSection } from './components/PartnersClientsSection';
+import { TestimonialsSection } from './components/TestimonialsSection';
 import { AboutPage } from './components/AboutPage';
 import { ProjectsPage } from './components/ProjectsPage';
 import { ContactPage } from './components/ContactPage';
 import { ProductDetailPage } from './components/ProductDetailPage';
 import { CategoryProductsPage } from './components/CategoryProductsPage';
 import { Footer } from './components/Footer';
+import { WhatsAppWidget } from './components/WhatsAppWidget';
 import { CATEGORIES } from './productsData';
 
 type ViewMode = 'home' | 'about' | 'projects' | 'contact' | 'category' | 'product-detail';
@@ -162,7 +164,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-white text-[#333333] font-['Montserrat',sans-serif] selection:bg-[#E5252B] selection:text-white">
+    <div className="min-h-screen flex flex-col bg-white dark:bg-[var(--bg-primary)] text-[#333333] dark:text-[var(--text-body)] font-['Montserrat',sans-serif] selection:bg-[#E5252B] selection:text-white">
       {/* Main Navigation Header */}
       <Header
         activeTab={
@@ -211,14 +213,18 @@ export default function App() {
             <MissionVisionSection />
             <ServicesSection />
             <PartnersSection />
-            <QuoteSection />
             <AboutSeoSection />
+            <PartnersClientsSection />
+            <TestimonialsSection />
           </>
         )}
       </main>
 
       {/* Corporate Footer with Navigation Links */}
       <Footer onNavigate={navigateTo} />
+
+      {/* Floating WhatsApp Chat Widget (rendered once site-wide) */}
+      <WhatsAppWidget />
     </div>
   );
 }

@@ -26,7 +26,7 @@ const allowedOrigins = (process.env.CORS_ORIGIN || 'http://localhost:3000,http:/
 
 const UPLOADS_DIR = path.resolve(process.env.UPLOADS_DIR || 'uploads');
 const CLIENT_DIST_DIR = path.resolve(process.env.CLIENT_DIST_DIR || path.resolve(__dirname, '../../client/dist'));
-const ADMIN_DIST_DIR = path.resolve(process.env.ADMIN_DIST_DIR || path.resolve(__dirname, '../../Safemete_Admin/dist'));
+const ADMIN_DIST_DIR = path.resolve(process.env.ADMIN_DIST_DIR || path.resolve(__dirname, '../../safemete_Admin/dist'));
 const ADMIN_HOSTS = (process.env.ADMIN_HOSTS || '')
   .split(',')
   .map((host) => host.trim().toLowerCase())

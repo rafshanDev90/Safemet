@@ -1,29 +1,32 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { ADVANTAGES, ASSETS } from '../data';
 import { Play, X } from 'lucide-react';
 import { Container } from './Container';
+import { Reveal } from './Reveal';
 
 export const AdvantagesSection: React.FC = () => {
+  const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState<string>(ADVANTAGES[0].id);
   const [showVideoModal, setShowVideoModal] = useState<boolean>(false);
 
   return (
-    <section id="advantages" className="w-full bg-[#1b1f22] text-white">
+    <section id="advantages" className="w-full bg-white dark:bg-[var(--bg-primary)] text-white">
       <Container className="px-0 sm:px-4 lg:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2">
           {/* Left Column: Why Choose Us / Accordion */}
-          <div className="p-8 sm:p-12 lg:p-20 flex flex-col justify-center bg-[#202528]">
+          <Reveal className="p-8 sm:p-12 lg:p-20 flex flex-col justify-center bg-[#202528]">
             {/* Subtitle */}
             <div className="flex items-center gap-3 mb-3">
               <div className="w-6 h-[1.5px] bg-[#E5252B]" />
               <span className="text-[13px] font-bold tracking-[0.25em] text-[#9ca3af] uppercase font-['Montserrat',sans-serif]">
-                WHY CHOOSE US
+                {t('advantages.eyebrow')}
               </span>
             </div>
 
             {/* Main Headline */}
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white uppercase tracking-wider mb-8 sm:mb-10 font-['Montserrat',sans-serif]">
-              OUR ADVANTAGES
+              {t('advantages.title')}
             </h2>
 
             {/* Advantages Interactive Accordion */}
@@ -46,27 +49,27 @@ export const AdvantagesSection: React.FC = () => {
                     >
                       <span className="flex items-center gap-2">
                         <span className="text-[#E5252B] font-bold text-lg leading-none">—</span>
-                        <span>{adv.title}</span>
+                        <span>{t(`advantages.items.${adv.id}.title`)}</span>
                       </span>
                     </button>
 
                     {/* Content Collapse */}
                     {isOpen && (
                       <div className="bg-[#1f2428] px-6 sm:px-7 py-5 text-sm sm:text-[15px] text-neutral-300 leading-relaxed border-l-2 border-[#E5252B] animate-fadeIn">
-                        {adv.content}
+                        {t(`advantages.items.${adv.id}.content`)}
                       </div>
                     )}
                   </div>
                 );
               })}
             </div>
-          </div>
+          </Reveal>
 
           {/* Right Column: TVC Video Banner */}
-          <div className="relative w-full min-h-[320px] sm:min-h-[440px] lg:min-h-[620px] overflow-hidden group bg-black">
+          <Reveal delay={0.1} className="relative w-full min-h-[320px] sm:min-h-[440px] lg:min-h-[620px] overflow-hidden group bg-black">
           <img
             src={ASSETS.tvcWoman}
-            alt="Safemete TVC Fire Safety Presentation"
+            alt={t('advantages.imageAlt')}
             referrerPolicy="no-referrer"
             className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 opacity-95"
           />
@@ -83,7 +86,7 @@ export const AdvantagesSection: React.FC = () => {
               <Play className="w-5 h-5 text-white fill-white ml-0.5" />
             </div>
             <span className="text-white font-extrabold text-lg tracking-widest uppercase drop-shadow-md">
-              TVC
+              {t('advantages.tvc')}
             </span>
           </div>
 
@@ -91,27 +94,27 @@ export const AdvantagesSection: React.FC = () => {
           <button
             onClick={() => setShowVideoModal(true)}
             className="absolute inset-0 m-auto w-20 h-20 rounded-full bg-black/40 hover:bg-[#E5252B] border-2 border-white/80 flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-2xl focus:outline-none"
-            aria-label="Play TV Commercial"
+            aria-label={t('advantages.tvcAria')}
           >
             <Play className="w-9 h-9 text-white fill-white ml-1" />
           </button>
-        </div>
+        </Reveal>
         </div>
       </Container>
 
       {/* Video Modal */}
       {showVideoModal && (
         <div
-          className="fixed inset-0 z-50 bg-black/80 backdrop-blur-xs flex items-center justify-center p-4"
+          className="fixed inset-0 z-50 bg-black/80 backdrop-blur-xs flex items-center justify-center p-4 animate-fadeIn"
           onClick={() => setShowVideoModal(false)}
         >
           <div
-            className="bg-[#181b1e] rounded-lg max-w-3xl w-full overflow-hidden shadow-2xl border border-neutral-700"
+            className="bg-[#181b1e] rounded-lg max-w-3xl w-full overflow-hidden shadow-2xl border border-neutral-700 animate-fadeInScale"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="p-4 bg-[#202528] flex items-center justify-between border-b border-neutral-700">
               <span className="font-bold text-sm uppercase tracking-wider text-white flex items-center gap-2">
-                <Play className="w-4 h-4 text-[#E5252B] fill-[#E5252B]" /> SAFEMETE TV Commercial - Fire Safety Solution
+                <Play className="w-4 h-4 text-[#E5252B] fill-[#E5252B]" /> {t('advantages.modalTitleSuffix')}
               </span>
               <button
                 onClick={() => setShowVideoModal(false)}
@@ -123,7 +126,7 @@ export const AdvantagesSection: React.FC = () => {
             <div className="aspect-video w-full bg-black flex items-center justify-center relative">
               <img
                 src={ASSETS.tvcWoman}
-                alt="Video Still"
+                alt={t('advantages.videoStillAlt')}
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover opacity-60"
               />
@@ -132,10 +135,10 @@ export const AdvantagesSection: React.FC = () => {
                   <Play className="w-8 h-8 text-white fill-white ml-1" />
                 </div>
                 <h4 className="text-white text-lg font-bold uppercase tracking-wider mb-1">
-                  Safemete TV Commercial
+                  {t('advantages.modalHeading')}
                 </h4>
                 <p className="text-neutral-300 text-xs max-w-md">
-                  Delivering UL listed and FM approved fire safety systems across Bangladesh since 2015.
+                  {t('advantages.modalTagline')}
                 </p>
               </div>
             </div>

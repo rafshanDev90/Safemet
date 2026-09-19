@@ -1,0 +1,299 @@
+{
+  "header": {
+    "home": "HOME",
+    "about": "ABOUT US",
+    "products": "PRODUCTS",
+    "projects": "PROJECTS",
+    "media": "MEDIA",
+    "contact": "CONTACT US",
+    "mediaCategories": ["PICTURE GALLERY", "VIDEO GALLERY", "CATALOGUE"],
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "toggleProductsSub": "Toggle Products sub-menu",
+    "toggleMediaSub": "Toggle Media sub-menu",
+    "callUs": "Call Us: +0800-7777777",
+    "languageLabel": "Language"
+  },
+  "hero": {
+    "titleLine1": "REACH ANYWHERE",
+    "titleLine2": "TO FIGHT FIRE",
+    "alt": "Fire Safety Hose Cabinet"
+  },
+  "products": {
+    "title": "OUR PRODUCTS",
+    "prev": "Previous product",
+    "next": "Next product",
+    "loading": "Loading products...",
+    "viewSpecs": "View Specs",
+    "closeModal": "Close modal",
+    "ulFm": "UL Listed & FM Approved",
+    "requestQuote": "Request Quote"
+  },
+  "advantages": {
+    "eyebrow": "WHY CHOOSE US",
+    "title": "OUR ADVANTAGES",
+    "tvc": "TVC",
+    "tvcAria": "Play TV Commercial",
+    "imageAlt": "RN Group TVC Fire Safety Presentation",
+    "modalTitleSuffix": "RN Group TV Commercial - Fire Safety Solution",
+    "modalHeading": "RN Group TV Commercial",
+    "modalTagline": "Delivering UL listed and FM approved fire safety systems across Bangladesh since 2015.",
+    "videoStillAlt": "Video Still",
+    "items": {
+      "adv-1": {
+        "title": "Extensive Experience",
+        "content": "Since 2015, we have been selling world top class branded fire safety equipment."
+      },
+      "adv-2": {
+        "title": "Quality from start to finish",
+        "content": "Uncompromising standard verification, factory testing, and certified fire safety engineering compliance."
+      },
+      "adv-3": {
+        "title": "UL listed and FM approved",
+        "content": "All our equipment meets rigorous international standards from Underwriters Laboratories and Factory Mutual."
+      },
+      "adv-4": {
+        "title": "Best service provider",
+        "content": "Dedicated round-the-clock technical emergency support, preventive maintenance, and expert installation team."
+      }
+    }
+  },
+  "projects": {
+    "title": "OUR PROJECTS",
+    "subtitle": "Major Installations & Fire Protection Sites",
+    "view": "View",
+    "systemInstalled": "Complete Fire Detection & Hydrant System Installed",
+    "verifiedSite": "Verified Site",
+    "categories": {
+      "Textile & Garments": "Textile & Garments",
+      "Commercial & Corporate": "Commercial & Corporate",
+      "Industrial Conglomerate": "Industrial Conglomerate",
+      "Apparel & Textiles": "Apparel & Textiles",
+      "Power & Energy": "Power & Energy",
+      "Commercial Architecture": "Commercial Architecture",
+      "Commercial Retail": "Commercial Retail",
+      "Institutional & Culture": "Institutional & Culture",
+      "Healthcare & Hospital": "Healthcare & Hospital",
+      "Healthcare & Education": "Healthcare & Education",
+      "International Institution": "International Institution",
+      "Aviation Infrastructure": "Aviation Infrastructure",
+      "Financial & Government": "Financial & Government"
+    }
+  },
+  "projectsPage": {
+    "title": "PROJECTS",
+    "breadcrumb": "HOME",
+    "viewProject": "View Project",
+    "category": "Category: ",
+    "location": "Location: ",
+    "modalPara": "Full-scale fire safety protection, UL-listed sprinkler network, FM-approved fire pump installations, and addressable intelligent alarm system delivered and commissioned by RN Group Fire Safety Equipment & Solution.",
+    "close": "Close",
+    "closeAria": "Close modal",
+    "imageAlt": "RN Group Fire Safety Installation Projects"
+  },
+  "services": {
+    "title": "OUR SERVICES",
+    "introQuote": "We are a full-service provider of fire safety inspection, testing, and maintenance services in all areas of fire protection requirements.",
+    "imageAlt": "Fire Safety Inspection & Testing Engineer",
+    "badge": "Certified Field Service",
+    "items": {
+      "srv-1": {
+        "title": "DESIGN & DRAWING",
+        "description": "Fire safety design and drawing according to the requirement."
+      },
+      "srv-2": {
+        "title": "SYSTEM INSTALLATION",
+        "description": "Proper installation of Fire Safety Equipment system."
+      },
+      "srv-3": {
+        "title": "TESTING & COMMISSIONING",
+        "description": "After successfully install the system, our testing and commissioning team check and recheck the overall system."
+      },
+      "srv-4": {
+        "title": "MAINTENANCE",
+        "description": "We provide comprehensive customer care, after sales service and proper maintenance of the system."
+      }
+    }
+  },
+  "missionVision": {
+    "title": "OUR MISSION & VISION",
+    "missionTitle": "OUR MISSION",
+    "missionText": "To safeguard lives, property, and business continuity across Bangladesh by delivering internationally certified — UL listed and FM approved — fire safety equipment and engineered protection systems, supported by end-to-end design, installation, testing, and maintenance services of uncompromising quality.",
+    "visionTitle": "OUR VISION",
+    "visionText": "To be the most trusted and preferred fire safety solutions partner in Bangladesh and across South Asia — recognised for engineering excellence, integrity, and round-the-clock responsiveness — where every facility we protect operates with complete confidence in its fire safety readiness.",
+    "chairmanLabel": "MESSAGE FROM THE CHAIRMAN",
+    "chairmanText": "From our very first installation, our resolve has been simple: no facility should ever be at risk for want of reliable fire protection. RN Group was founded on the belief that world-class, UL listed and FM approved fire safety equipment should be within reach of every business in Bangladesh. Today, supported by our parent group and our own state-of-the-art refill plant, we are able to bring you internationally trusted equipment, professional installation, and dependable after-sales service all under one roof. We consider it a privilege to protect your people and your business.",
+    "chairmanName": "Chairman’s Name",
+    "chairmanRole": "Chairman, RN Group Fire Safety Equipment & Solution",
+    "ceoLabel": "MESSAGE FROM THE CEO",
+    "ceoText": "In an era when fire safety regulations are growing ever more rigorous, we believe that protection begins long before an incident occurs. Our team of certified engineers works with you from design and drawing through installation, testing and commissioning, and continues with regular preventive maintenance so your system is always ready to respond. Whether you operate in the power, commercial, or ready-made garment sector, we commit to serving you with the same technical discipline and care we apply to our largest national projects.",
+    "ceoName": "CEO’s Name",
+    "ceoRole": "Chief Executive Officer, RN Group Fire Safety Equipment & Solution",
+    "chairmanAlt": "Chairman of RN Group Fire Safety Equipment & Solution",
+    "ceoAlt": "CEO of RN Group Fire Safety Equipment & Solution"
+  },
+  "partners": {
+    "title": "OUR GLOBAL PARTNERS",
+    "prev": "Previous partner",
+    "next": "Next partner"
+  },
+  "aboutSeo": {
+    "title": "FIRE SAFETY EQUIPMENT: BEST SUPPLIER IN BANGLADESH",
+    "text": "From air tanks to houses, fire fighting equipment is a necessity for any department and the right gear at the right time can make all the difference in a fight against a blaze. At Firehouse Supplies, we, RN Group as a fire safety equipment & solution are proud to be the largest supplier of fire fighting equipment and gear in Bangladesh."
+  },
+  "partnersClients": {
+    "title": "OUR PARTNERS & CLIENTS",
+    "subtitle": "Trusted by Leading Organizations",
+    "placeholderNote": "Placeholder logos — replace with real client/partner branding."
+  },
+  "testimonials": {
+    "title": "WHAT OUR CLIENTS SAY",
+    "items": {
+      "t-1": {
+        "designation": "Head of Operations",
+        "quote": "RN Group delivered our full factory fire protection installation ahead of schedule and within budget. Their engineers were professional, safety-focused, and meticulous in every phase of the work."
+      },
+      "t-2": {
+        "designation": "Plant Director",
+        "quote": "The maintenance program they set up keeps all of our systems in perfect condition year-round. Whenever we call the emergency helpline, a technician responds immediately and resolves it quickly."
+      },
+      "t-3": {
+        "designation": "Managing Director",
+        "quote": "From design and equipment selection to commissioning and staff training, the whole process was smooth and well documented. We trust them completely with our fire safety compliance."
+      }
+    }
+  },
+  "footer": {
+    "aboutTitle": "ABOUT US",
+    "aboutText": "RN Group Fire Safety Equipment & Solution as expressed by the name is dedicated to provide quality fire safety products and services. All of the products are imported from various countries of first world which are UL listed and FM approved.",
+    "getInTouch": "GET IN TOUCH",
+    "hotline": "HOTLINE",
+    "landline": "LANDLINE",
+    "email": "E-MAIL",
+    "website": "WEBSITE",
+    "address": "ADDRESS",
+    "addressValue": "Holding no 9/2, 4th Floor, Avenue 5, Block B, Section 6, Mirpur, Dhaka-1216.",
+    "usefulLinks": "USEFUL LINKS",
+    "linkHome": "Home",
+    "linkAbout": "About Us",
+    "linkPictureGallery": "Picture Gallery",
+    "linkVideoGallery": "Video Gallery",
+    "linkCatalogue": "Catalogue",
+    "linkContact": "Contact Us",
+    "copyright": "© 2026. All Rights Reserved",
+    "scrollTop": "Scroll to top"
+  },
+  "about": {
+    "breadcrumb": "HOME",
+    "title": "ABOUT US",
+    "heading": "A FEW WORDS ABOUT US",
+    "bannerAlt": "About RN Group Fire Safety Solutions",
+    "p1": "At 1981 RN GROUP Group started its business as a processor of fruits and vegetables in Bangladesh. Now RN GROUP Group is the leading agricultural and plastic product producer and manufacturer. Beside food and plastic products Rangpur Metal Industries Limited (RMIL) being a sister concern of RN GROUP Group starts importing world class fire safety equipment for serving all over our country. In the beginning the sales, servicing and marketing started under the banner of RN GROUP Fire Safety.",
+    "p2": "RN Group Fire Safety Equipment & Solution as expressed by the name is dedicated to provide quality fire safety products and services. All of the products are imported from various countries of first world which are UL listed and FM approved. We have done a lots of big projects in different Government and Non- government organization. The Span of work also extends to different sectors like power, commercial and RMG industries. Our clients are our advocates and they speak for our quality products and services. Our own refill plant helps us to provide excellent quality refills with accurate measurements for fire extinguisher with high influence of technology. Besides fire safety we provide surveillance system as well.",
+    "p3": "We welcome the opportunity to become your safety partner in your valuable business.",
+    "teamTitle": "OUR MANAGEMENT TEAM",
+    "team": {
+      "team-1": {
+        "title": "CHAIRMAN AND CEO",
+        "description": "Chairman and CEO of RN GROUP Group"
+      },
+      "team-2": {
+        "title": "MANAGING DIRECTOR",
+        "description": "Managing Director of RN GROUP Group"
+      },
+      "team-3": {
+        "title": "CHIEF OPERATING OFFICER",
+        "description": "Chief Operating Officer of RMIL and FSE."
+      }
+    },
+    "features": {
+      "feat-1": {
+        "title": "24/7 SERVICE",
+        "description": "The one-stop call center 09613737777 has a solution for emergency, complaints exploration, installation, troubleshooting and after sales support round the clock."
+      },
+      "feat-2": {
+        "title": "TECHNICAL SUPPORT AND TRAINING",
+        "description": "The after sales and installation service includes staff training, explanation of usage & routine check up to ensure fire safety readiness at all times."
+      },
+      "feat-3": {
+        "title": "CONTINUED ROUTINE MAINTENANCE",
+        "description": "Every fortnightly preventative routine maintenance (cleaning, lubrication, adjustment) to ensure that your fire protection systems operate without failure."
+      }
+    }
+  },
+  "contact": {
+    "breadcrumb": "HOME",
+    "title": "CONTACT US",
+    "bannerAlt": "Contact RN Group Fire Safety Equipment & Solution",
+    "getInTouch": "Get in Touch",
+    "thanksTitle": "Thank you! Message Sent.",
+    "thanksBody": "Our safety support engineers have received your inquiry and will reach out to you shortly.",
+    "name": "Your Name*",
+    "email": "Your E-mail*",
+    "phone": "Your Phone*",
+    "message": "Message",
+    "submit": "CONTACT US",
+    "getSocial": "GET SOCIAL",
+    "hotline": "HOTLINE",
+    "landline": "LANDLINE",
+    "emailLabel": "E-MAIL",
+    "website": "WEBSITE",
+    "address": "ADDRESS",
+    "addressValue": "Holding no 9/2, 4th Floor, Avenue 5, Block B, Section 6, Mirpur, Dhaka-1216.",
+    "locationTitle": "OUR LOCATION",
+    "mapTitle": "RN Group Head Office — Mirpur, Dhaka",
+    "officesTitle": "OUR OFFICES",
+    "offices": {
+      "office-1": "Dhaka Office",
+      "office-2": "Bogura Office",
+      "office-3": "Rajshahi Office",
+      "office-4": "Malaysia Office"
+    }
+  },
+  "categoryProducts": {
+    "breadcrumb": "HOME",
+    "title": "PRODUCTS",
+    "notFoundTitle": "No Products Found",
+    "notFoundBody": "The category \"{{slug}}\" does not exist or has no active products listed.",
+    "exploreTitle": "Explore Our Product Categories",
+    "loading": "Loading products..."
+  },
+  "productDetail": {
+    "breadcrumb": "HOME",
+    "title": "PRODUCT",
+    "loadingTitle": "Loading product details...",
+    "notFoundTitle": "Product Not Found",
+    "notFoundBody": "The requested product could not be located in our catalog.",
+    "backToProducts": "Back to Products",
+    "categoryLabel": "Category: ",
+    "additionalInfo": "ADDITIONAL INFORMATION",
+    "relatedProducts": "RELATED PRODUCTS"
+  },
+  "categories": {
+    "fire-protection-system": {
+      "name": "Fire Protection System",
+      "displayName": "FIRE PROTECTION SYSTEM",
+      "description": "Comprehensive water-based and mechanical fire protection equipment including fire pumps, valves, hydrants, hoses, and sprinkler systems."
+    },
+    "fire-detection-alarm-system": {
+      "name": "Fire Detection & Alarm System",
+      "displayName": "FIRE DETECTION & ALARM SYSTEM",
+      "description": "Advanced early-warning addressable and conventional fire alarm panels, smoke/heat detectors, sounder strobes, and manual stations."
+    },
+    "fire-suppression-system": {
+      "name": "Fire Suppression System",
+      "displayName": "FIRE SUPPRESSION SYSTEM",
+      "description": "Clean agent gas, CO2, foam, and kitchen hood fire suppression systems for sensitive server rooms, electrical rooms, and industrial hazards."
+    },
+    "fire-extinguisher": {
+      "name": "Fire Extinguisher",
+      "displayName": "FIRE EXTINGUISHER",
+      "description": "UL-listed and certified dry powder (ABC/DCP), CO2, foam, water, and clean agent portable & trolley fire extinguishers."
+    },
+    "ms-seamless-pipe": {
+      "name": "MS Seamless Pipe",
+      "displayName": "MS SEAMLESS PIPE",
+      "description": "ASTM A106 / A53 Schedule 40 & 80 seamless carbon steel and ERW fire fighting pipes, grooved couplings, and certified fittings."
+    }
+  }
+}
