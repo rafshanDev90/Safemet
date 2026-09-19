@@ -6,3 +6,4 @@ node_modules/
 *.log
 htaccess-reference/admin-subdomain.htaccess
 htaccess-reference/main-site.htaccess
+safemate/Safemet-client
