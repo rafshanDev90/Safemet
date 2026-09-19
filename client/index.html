@@ -7,11 +7,11 @@
     <script>
       (function () {
         try {
-          const stored = localStorage.getItem('safemete-theme');
+          const stored = localStorage.getItem('rn-group-theme');
           if (stored === 'dark') document.documentElement.classList.add('dark');
           else if (stored === 'light') document.documentElement.classList.add('light');
           else document.documentElement.classList.add('light');
-          const lang = localStorage.getItem('safemete-lang');
+          const lang = localStorage.getItem('rn-group-lang');
           if (lang === 'bn') document.documentElement.setAttribute('lang', 'bn');
         } catch (e) {}
       })();

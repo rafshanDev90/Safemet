@@ -32,7 +32,7 @@ export const MfaPage: React.FC = () => {
 
     try {
       await verifyMfa(code);
-      success('2FA Verified', 'Authentication successful. Welcome to safemete.');
+      success('2FA Verified', 'Authentication successful. Welcome to RN Group.');
       navigate('/dashboard');
     } catch (err: any) {
       const msg = err?.message || 'Invalid 6-digit code. Please try again.';

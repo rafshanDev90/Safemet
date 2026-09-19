@@ -266,10 +266,10 @@ className="w-full bg-white dark:bg-[var(--bg-input)] text-neutral-800 dark:text-
                 <div className="flex items-center gap-2.5">
                   <Mail className="w-5 h-5 text-[#C22126] stroke-[2]" />
                   <a
-                    href="mailto:infosafemetebd@gmail.com"
+                    href="mailto:info@rn-group.com"
                     className="text-sm sm:text-[15px] font-medium text-neutral-700 hover:text-[#E5252B] transition-colors dark:text-[var(--text-muted)]"
                   >
-                    infosafemetebd@gmail.com
+                    info@rn-group.com
                   </a>
                 </div>
               </div>
@@ -282,12 +282,12 @@ className="w-full bg-white dark:bg-[var(--bg-input)] text-neutral-800 dark:text-
                 <div className="flex items-center gap-2.5">
                   <Globe className="w-5 h-5 text-[#C22126] stroke-[2]" />
                   <a
-                    href="https://www.safemeteinfo.com"
+                    href="https://www.rn-group.com"
                     target="_blank"
                     rel="noreferrer"
                     className="text-sm sm:text-[15px] font-medium text-neutral-700 hover:text-[#E5252B] transition-colors dark:text-[var(--text-muted)]"
                   >
-                    www.safemeteinfo.com
+                    www.rn-group.com
                   </a>
                 </div>
               </div>

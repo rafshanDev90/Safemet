@@ -20,7 +20,7 @@ export const productFormSchema = z.object({
     .min(2, 'Slug must be at least 2 characters')
     .max(120, 'Slug must be under 120 characters')
     .regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, {
-      message: 'Slug must be lowercase alphanumeric with hyphens (e.g., safemete-co2-extinguisher-5kg)',
+      message: 'Slug must be lowercase alphanumeric with hyphens (e.g., rn-group-co2-extinguisher-5kg)',
     }),
   category: productCategoryEnum,
   description: z.string().max(2000, 'Description cannot exceed 2000 characters'),

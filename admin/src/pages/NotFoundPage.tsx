@@ -11,7 +11,7 @@ export const NotFoundPage: React.FC = () => {
       <h1 className="text-4xl font-extrabold text-white tracking-tight">404</h1>
       <p className="text-lg font-bold text-slate-200 mt-2">Page Not Found</p>
       <p className="text-sm text-slate-400 mt-1 max-w-sm">
-        The requested admin route or equipment resource does not exist in the safemete cluster.
+        The requested admin route or equipment resource does not exist in the RN Group cluster.
       </p>
       <Link
         to="/dashboard"

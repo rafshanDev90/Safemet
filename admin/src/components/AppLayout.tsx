@@ -18,7 +18,7 @@ export const AppLayout: React.FC = () => {
             <Loader2 className="w-6 h-6 animate-spin text-white" />
           </div>
           <p className="text-sm font-semibold tracking-wider text-slate-300 uppercase">
-            Loading safemete Portal...
+            Loading RN Group Portal...
           </p>
         </div>
       </div>

@@ -17,8 +17,8 @@ let memoryAccessToken: string | null = null;
 let memoryRefreshToken: string | null = null;
 
 // Session storage backup for tab persistence across browser refresh
-const STORAGE_KEY_REFRESH = 'safemete_rt_sess';
-const STORAGE_KEY_USER = 'safemete_auth_user';
+const STORAGE_KEY_REFRESH = 'rn_group_rt_sess';
+const STORAGE_KEY_USER = 'rn_group_auth_user';
 
 export function getStoredUser(): User | null {
   try {

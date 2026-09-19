@@ -110,10 +110,10 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 <div className="flex items-center gap-2">
                   <Mail className="w-4 h-4 text-[#E5252B] flex-shrink-0" />
                   <a
-                    href="mailto:infosafemetebd@gmail.com"
+                    href="mailto:info@rn-group.com"
                     className="text-neutral-200 hover:text-[#E5252B] transition-colors"
                   >
-                    infosafemetebd@gmail.com
+                    info@rn-group.com
                   </a>
                 </div>
               </div>
@@ -125,12 +125,12 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 <div className="flex items-center gap-2">
                   <Globe className="w-4 h-4 text-[#E5252B] flex-shrink-0" />
                   <a
-                    href="https://www.safemeteinfo.com"
+                    href="https://www.rn-group.com"
                     target="_blank"
                     rel="noreferrer"
                     className="text-neutral-200 hover:text-[#E5252B] transition-colors"
                   >
-                    www.safemeteinfo.com
+                    www.rn-group.com
                   </a>
                 </div>
               </div>

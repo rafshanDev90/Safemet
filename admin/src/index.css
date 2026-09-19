@@ -2,12 +2,12 @@
 
 @layer base {
   :root {
-    --safemete-primary: #E5252B;
-    --safemete-accent: #C22126;
-    --safemete-bg: #202528;
-    --safemete-surface: #262C31;
-    --safemete-sidebar: #1A1E21;
-    --safemete-border: #2D3439;
+    --rn-group-primary: #E5252B;
+    --rn-group-accent: #C22126;
+    --rn-group-bg: #202528;
+    --rn-group-surface: #262C31;
+    --rn-group-sidebar: #1A1E21;
+    --rn-group-border: #2D3439;
   }
 
   body {

@@ -6,7 +6,7 @@ import bn from './locales/bn.json';
 export const LANGUAGES = ['en', 'bn'] as const;
 export type SupportedLanguage = (typeof LANGUAGES)[number];
 
-const STORAGE_KEY = 'safemete-lang';
+const STORAGE_KEY = 'rn-group-lang';
 
 function getStoredLanguage(): SupportedLanguage {
   if (typeof window === 'undefined') return 'en';

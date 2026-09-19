@@ -64,7 +64,7 @@ export const TopBar: React.FC<TopBarProps> = ({ onOpenMobileMenu, isCollapsed })
   const handleLogout = async () => {
     await logout();
     navigate('/login');
-    success('Logged out', 'You have securely signed out of safemete portal.');
+    success('Logged out', 'You have securely signed out of RN Group portal.');
   };
 
   const mockNotifications = [

@@ -52,7 +52,7 @@ export const DashboardPage: React.FC = () => {
         <div>
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#E5252B]/10 text-[#E5252B] border border-[#E5252B]/20 text-xs font-bold uppercase tracking-wider mb-2">
             <Zap className="w-3.5 h-3.5" />
-            safemete Enterprise Console
+            RN Group Enterprise Console
           </div>
           <h1 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
             Welcome, {user?.name || 'Marcus Vancore'}
@@ -416,7 +416,7 @@ export const DashboardPage: React.FC = () => {
 
           <div className="mt-6 pt-4 border-t border-[#2D3439]">
             <p className="text-[11px] text-gray-400">
-              safemete Cloud Gateway v2.4 • Node ID: <span className="font-mono text-gray-300">sg-cluster-east-1</span>
+              RN Group Cloud Gateway v2.4 • Node ID: <span className="font-mono text-gray-300">sg-cluster-east-1</span>
             </p>
           </div>
         </div>

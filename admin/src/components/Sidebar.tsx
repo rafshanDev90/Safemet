@@ -87,7 +87,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
               {!isCollapsed && (
                 <div className="flex flex-col truncate">
                   <span className="font-black text-lg tracking-tight leading-none text-white flex items-center gap-1.5">
-                    safemete
+                    RN Group
                   </span>
                   <span className="text-[10px] uppercase tracking-widest text-gray-500 font-bold mt-0.5">
                     Fire Safety System

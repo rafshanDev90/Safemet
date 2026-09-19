@@ -27,7 +27,7 @@ export const LoginPage: React.FC = () => {
   } = useForm<LoginFormValues>({
     resolver: zodResolver(loginFormSchema) as any,
     defaultValues: {
-      email: 'admin@safemete.com',
+      email: 'admin@rn-group.com',
       password: 'Admin@12345',
       rememberMe: true,
     },
@@ -41,7 +41,7 @@ export const LoginPage: React.FC = () => {
       if (res.requiresMfa) {
         navigate('/mfa');
       } else {
-        toastSuccess('Welcome back', 'Successfully logged in to safemete Admin Panel.');
+        toastSuccess('Welcome back', 'Successfully logged in to RN Group Admin Panel.');
         navigate('/dashboard');
       }
     } catch (err: any) {
@@ -55,10 +55,10 @@ export const LoginPage: React.FC = () => {
 
   const handleQuickFill = (role: 'admin' | 'editor') => {
     if (role === 'admin') {
-      setValue('email', 'admin@safemete.com');
+      setValue('email', 'admin@rn-group.com');
       setValue('password', 'Admin@12345');
     } else {
-      setValue('email', 'editor@safemete.com');
+      setValue('email', 'editor@rn-group.com');
       setValue('password', 'EditorPassword123!');
     }
     setAuthError(null);
@@ -76,7 +76,7 @@ export const LoginPage: React.FC = () => {
             <Flame className="w-8 h-8 fill-white/20" />
           </div>
           <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">
-            safemete
+            RN Group
           </h1>
           <p className="text-xs sm:text-sm text-slate-400 mt-1 font-medium">
             Fire Safety Equipment Enterprise Admin Portal
@@ -106,7 +106,7 @@ export const LoginPage: React.FC = () => {
                   id="input-email"
                   type="email"
                   autoComplete="email"
-                  placeholder="name@safemete.com"
+                  placeholder="name@rn-group.com"
                   {...register('email')}
                   className={`w-full pl-10 pr-4 py-3 rounded-xl bg-[#191D20] border text-sm text-white placeholder-slate-500 focus:outline-none transition-all ${
                     errors.email
@@ -205,7 +205,7 @@ export const LoginPage: React.FC = () => {
                 <div className="text-xs font-bold text-white group-hover:text-[#E5252B]">
                   Super Admin
                 </div>
-                <div className="text-[10px] text-slate-400">admin@safemete.com</div>
+                <div className="text-[10px] text-slate-400">admin@rn-group.com</div>
               </button>
 
               <button
@@ -217,7 +217,7 @@ export const LoginPage: React.FC = () => {
                 <div className="text-xs font-bold text-white group-hover:text-[#E5252B]">
                   Catalog Editor
                 </div>
-                <div className="text-[10px] text-slate-400">editor@safemete.com</div>
+                <div className="text-[10px] text-slate-400">editor@rn-group.com</div>
               </button>
             </div>
           </div>

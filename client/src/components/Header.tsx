@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { SafemeteLogo } from './SafemeteLogo';
+import { RNGroupLogo } from './RNGroupLogo';
 import { Phone, Mail, Menu, X, ChevronDown } from 'lucide-react';
 import { CATEGORIES, CategoryInfo } from '../productsData';
 import { Container } from './Container';
@@ -100,7 +100,7 @@ export const Header: React.FC<HeaderProps> = ({
         <Container className="h-[84px] flex items-center justify-between">
           {/* Brand Logo */}
           <div onClick={() => handleNavClick('home')} className="cursor-pointer">
-            <SafemeteLogo />
+            <RNGroupLogo />
           </div>
 
           {/* Desktop Navigation Links */}
@@ -386,11 +386,11 @@ export const Header: React.FC<HeaderProps> = ({
                 <span>{t('header.callUs')}</span>
               </a>
               <a
-                href="mailto:mktg980@safemete.com"
+                href="mailto:mktg980@rn-group.com"
                 className="min-h-[44px] flex items-center justify-center gap-2 bg-[#252a2e] hover:bg-neutral-700 text-neutral-300 text-sm tracking-wide rounded-sm transition-colors"
               >
                 <Mail className="w-4 h-4 text-neutral-400" />
-                <span>mktg980@safemete.com</span>
+                <span>mktg980@rn-group.com</span>
               </a>
             </div>
           </div>

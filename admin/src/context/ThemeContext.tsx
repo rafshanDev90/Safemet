@@ -13,12 +13,12 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [theme, setThemeState] = useState<Theme>(() => {
     try {
-      const stored = localStorage.getItem('safemete_theme');
+      const stored = localStorage.getItem('rn_group_theme');
       if (stored === 'light' || stored === 'dark') return stored;
     } catch {
       // ignore
     }
-    return 'dark'; // safemete Dark mode default
+    return 'dark'; // RN Group Dark mode default
   });
 
   useEffect(() => {
@@ -31,7 +31,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       root.classList.remove('dark');
     }
     try {
-      localStorage.setItem('safemete_theme', theme);
+      localStorage.setItem('rn_group_theme', theme);
     } catch {
       // ignore
     }

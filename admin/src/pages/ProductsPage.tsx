@@ -593,7 +593,7 @@ export const ProductsPage: React.FC = () => {
             <input
               id="input-prod-name"
               type="text"
-              placeholder="e.g. safemete Pro-5 CO2 Extinguisher 5kg"
+              placeholder="e.g. RN Group Pro-5 CO2 Extinguisher 5kg"
               {...register('name')}
               className={`w-full px-4 py-2.5 rounded-xl bg-[#191D20] border text-sm text-white placeholder-slate-500 focus:outline-none transition-all ${
                 errors.name ? 'border-red-500 ring-2 ring-red-500/20' : 'border-[#384046] focus:border-[#E5252B]'
@@ -621,7 +621,7 @@ export const ProductsPage: React.FC = () => {
             <input
               id="input-prod-slug"
               type="text"
-              placeholder="safemete-pro-5-co2-extinguisher-5kg"
+              placeholder="rn-group-pro-5-co2-extinguisher-5kg"
               {...register('slug')}
               className={`w-full px-4 py-2.5 rounded-xl bg-[#191D20] font-mono border text-sm text-white placeholder-slate-500 focus:outline-none transition-all ${
                 errors.slug ? 'border-red-500 ring-2 ring-red-500/20' : 'border-[#384046] focus:border-[#E5252B]'
