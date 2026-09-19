@@ -12,7 +12,8 @@ import prodSuppressionImg from './assets/images/prod_suppression_sys_17882286108
 
 // About Us Page Assets
 import aboutBannerImg from './assets/images/about_banner_composite_1788229213031.jpg';
-import ceoImg from './assets/images/ceo_portrait_1788229236583.jpg';
+import chairmanImg from './assets/images/chairman.jpg';
+import ceoImg from './assets/images/ceo.jpg';
 import mdImg from './assets/images/md_portrait_1788229253570.jpg';
 import cooImg from './assets/images/coo_portrait_1788229270760.jpg';
 
@@ -73,7 +74,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
   {
     id: 'team-1',
     title: 'CHAIRMAN AND CEO',
-    image: ceoImg,
+    image: chairmanImg,
     description: 'Chairman and CEO of RN GROUP Group',
   },
   {
